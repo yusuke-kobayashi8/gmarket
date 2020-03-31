@@ -12,7 +12,7 @@
 |email|string|null: false, unique: true|
 |password|string|null: false|
 ### Association
-- belong_to :address
+- has_one :address
 - has_one :credit_card
 - has_many :orders
 - has_many :products
@@ -24,15 +24,15 @@
 |price|integer|null: false|
 |detail|text|null: false|
 |status|text|null: false|
-|derivery-fee|string|null: false|
-|derivery-days|string|null: false|
+|derivery_fee|string|null: false|
+|derivery_days|string|null: false|
 |place|string|null: false|
 |user|references|null: false, foreign_key: true|
 |brand|references|foreign_key: true|
 |category|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :order
+- has_one :order
 - has_many :images
 - belongs_to :category
 - belongs_to :brand
@@ -63,12 +63,14 @@
 ### Association
 - belongs_to :product
 
-## Ctegorysテーブル
+## Ctegoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|ancestry|string||
 ### Association
 - has_many :products
+- has_ancestry
 
 ## Brandsテーブル
 |Column|Type|Options|
