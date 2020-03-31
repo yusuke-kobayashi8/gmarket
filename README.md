@@ -11,24 +11,16 @@
 |birthday|integer|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|postal_code|inetger|null: false|
-|prefectures|string|null: false|
-|city|string|null: false|
-|adress|string|null: false|
-|building|string|
-|posting_family_name|string|null: false|
-|posting_first_name|string|null: false|
-|posting_family_name_f|string|null: false|
-|posting_first_name_f|string|null: false|
-|telephone|integer|
 ### Association
-- belongs_to :credit_card
+- belong_to :address
+- has_one :credit_card
+- has_many :orders
 - has_many :products
 
 ## Productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_name|string|null: false|
+|name|string|null: false|
 |price|integer|null: false|
 |detail|text|null: false|
 |status|text|null: false|
@@ -39,6 +31,7 @@
 |brand|references|foreign_key: true|
 |category|references|null: false, foreign_key: true|
 ### Association
+- belongs_to :user
 - belongs_to :order
 - has_many :images
 - belongs_to :category
@@ -47,7 +40,7 @@
 ## Credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 |customer|integer|null: false, foreign_key: true|
 |card|integer|null: false, foreign_key: true|
 ### Association
@@ -57,15 +50,16 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
-|product_id|integer|foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 ### Association
+- belongs_to :user
 - belongs_to :product
 
 ## Imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|product|references|foreign_key: true|
+|product|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
 
@@ -82,6 +76,23 @@
 |name|string|null: false|
 ### Association
 - has_many :products
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|postal_code|inetger|null: false|
+|prefectures|string|null: false|
+|city|string|null: false|
+|adress|string|null: false|
+|building|string|
+|posting_family_name|string|null: false|
+|posting_first_name|string|null: false|
+|posting_family_name_f|string|null: false|
+|posting_first_name_f|string|null: false|
+|telephone|integer|
+|user_id|references|foreign_key: true|
+### Association
+- belongs_to :user
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
