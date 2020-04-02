@@ -1,0 +1,21 @@
+.header_contents
+  .header_up_main
+    .header_up_main_icon
+      = image_tag 'logo.png', size:'140x45'
+    .header_up_main_seach_box
+      = form_tag( )  do
+        = text_field_tag :search,"キーワードから探す"
+      .submit_btn
+        = submit_tag "", class:"btn"
+  .header_under_main
+    .header_under_main_left_list
+      .header_under_main_left_list_categorie
+        %aカテゴリー
+      .header_under_main_left_list_brand
+        %aブランド
+    .header_under_main_right_list
+      .header_under_main_right_list_crrent_user
+        %aログイン
+      .header_under_main_right_list_new_user
+        %a新規登録
+

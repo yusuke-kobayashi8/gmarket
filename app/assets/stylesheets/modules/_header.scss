@@ -1,0 +1,64 @@
+.header {
+  height: 100px;
+  padding: 0 60px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  &_contents {
+    max-width: 1040px;
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    padding-top: 15px;
+    .header_up_main {
+      display: flex;
+      height: 50px;
+      .header_up_main_icon {
+        margin-right: 50px;
+        padding-bottom: 10px;
+      }
+      .header_up_main_seach_box {
+        width: 870px;
+        display: flex;
+        input[type="text"] {
+        width: 800px;
+        height: 36px;
+      }
+      .submit_btn {
+       
+        input[type="submit"] {
+          background: url("icon-search 1.png");
+          width: 40px;
+          height: 36px;
+          background-color: skyblue;
+         }
+        }
+      }
+    }
+    .header_under_main {
+      display: flex;
+      height: 40px;
+      &_left_list {
+        display: flex;
+      }
+        &_left_list_categorie {
+          padding-right: 30px;
+          line-height: 40px;
+        }
+        &_left_list_brand {
+          line-height: 40px;
+        }
+     .header_under_main_right_list {
+       margin-left: auto;
+       display: flex;
+        &_crrent_user {
+          padding-left: 30px;
+          line-height: 40px;
+        }
+        &_new_user {
+          padding-left: 30px;
+          line-height: 40px;
+         }
+        }
+    }
+  }
+}
