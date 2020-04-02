@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  background-color: #f8f8f8;
+  &__visual {
+    height: 560px;
+    width: 100%;
+    position: relative;
+  
+    &__content {
+      height: 560px;
+      width: 100%;
+      position: absolute;
+      top: 1px;
+      padding: 0 60px;
+      &__info {
+        width: 1000px;
+        height: 500px;
+        padding-top: 200px;
+      }
+        &__subtitle{
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          font-size: 35px;
+          line-height: 1.2;
+          color: #fff;
+        }
+        &__text {
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          font-size: 18px;
+          color: #fff;
+          line-height: 1.77778;
+          margin: 16px 0 0 0;
+        }
+        &__btn {
+          margin-top:10px ;
+          display: flex;
+          .google__btn {
+           position: relative;
+           img {
+             position: absolute;
+             bottom: 1px;
+           }
+        }
+      }  
+    }
+  }
+  .main__explain {
+    height: 658px;
+    background-color: #fff;
+    padding: 60px 20px;
+    &__subtitle {
+      text-align: center;
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+      .main__explain__subtitle::after {
+        content: "";
+        width: 70px;
+        height: 4px;
+        background-color: #3CCACE;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &__list {
+      width: 1020px;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      background-color: #fff;
+      &__1 {
+        width: 30%;
+        margin: 16px 5% 0 0;
+        &__pic {
+          margin-bottom: 20px;
+          position: relative;
+        }
+          &__number {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 56px;
+            height: 55px;
+            font-size: 30px;
+            padding-left: 20px;
+            line-height: 55px;
+            color: white;
+            background-color: #3CCACE;
+          }
+        &__text {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 50px;
+          padding-left: 60px;
+          span {
+            color: #3CCACE;
+          }
+        }
+        &__text__dateil{
+          font-size: 18px;
+          line-height: 1.5;
+          margin: 16px 0 0;
+        }
+      }
+      &__2 {
+        width: 30%;
+        margin: 16px 5% 0 0;
+        &__pic {
+          margin-bottom: 20px;
+          position: relative;
+        }
+        &__number {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 56px;
+          height: 55px;
+          font-size: 30px;
+          padding-left: 20px;
+          line-height: 55px;
+          color: white;
+          background-color: #3CCACE;
+        }
+         &__text {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 50px;
+          padding-left: 35px;
+          span {
+            color: #3CCACE;
+          }
+         &__dateil {
+          font-size: 18px;
+          line-height: 1.5;
+          margin: 16px 0 0;
+          }
+        }
+      }
+      &__3 {
+        width: 30%;
+        margin: 16px 5% 0 0;
+        &__pic {
+          margin-bottom: 20px;
+          position: relative;
+        }
+        &__number {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 56px;
+          height: 55px;
+          font-size: 30px;
+          padding-left: 20px;
+          line-height: 55px;
+          color: white;
+          background-color: #3CCACE;
+        }
+        &__text {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 50px;
+          padding-left: 60px;
+          span {
+            color: #3CCACE;
+          }
+         &__dateil {
+          font-size: 18px;
+          line-height: 1.5;
+          margin: 16px 30px 0;
+          }
+      }
+    }
+    
+  }
+  &__app_dl {
+    height: 400px;
+  }
+  &__point {
+    height: 733px;
+    background-color: red
+  }
+  &__pickup__content {
+    height: 420px;
+    background-color: seagreen;
+  }
+
+.footer {
+  height: 355px;
+  background-color: black;
+  }
+  }
+}

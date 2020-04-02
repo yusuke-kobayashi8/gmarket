@@ -1,2 +1,60 @@
-%h1 Products#index
-%p Find me in app/views/products/index.html.erb
+.warappr
+  .header
+    = render "header"
+  .main
+    .main__visual
+      = image_tag 'bg-mainVisual-pict_pc.jpg', size:'1265x560'
+      .main__visual__content
+        .main__visual__content__info
+          .main__visual__content__subtitle
+            %h2 人生を変えるスマホアプリ
+          .main__visual__content__text
+            FURIMAはだれでもかんたんに出品・購入できる
+            %br フリマアプリです
+          .main__visual__content__btn
+            .ios__btn
+              = image_tag 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg', size:'160x70'
+            .google__btn
+              = image_tag 'google-play-badge.png', size:'180x80'
+    .main__explain
+      .main__explain__subtitle
+        FURIMAが選ばれる3つの理由
+      .main__explain__list
+        .main__explain__list__1
+          .main__explain__list__1__pic
+            = image_tag 'pict-reason-01.jpg', size:'306x306'
+            .main__explain__list__1__number
+              %span 1
+          .main__explain__list__1__text
+            %span 3分
+            ですぐに出品
+          .main__explain__list__1__text__dateil
+            %p スマホで入力するだけで簡単に出品できる
+        .main__explain__list__2
+          .main__explain__list__2__pic
+            = image_tag 'pict-reason-02.jpg', size:'306x306'
+            .main__explain__list__2__number
+              %span 2
+          .main__explain__list__2__text
+            %span シンプル
+            で使いやすい
+          .main__explain__list__2__text__dateil
+            %p めんどくさい入力は必要なく、検索も購入もスムーズ！
+        .main__explain__list__3
+          .main__explain__list__3__pic
+            = image_tag 'pict-reason-03.jpg', size:'306x306'
+            .main__explain__list__3__number
+              %span 3
+          .main__explain__list__3__text
+            手数料
+            %span 業界最安
+          .main__explain__list__3__text__dateil
+            %p 最大3%でお得に出品＆購入！
+    .main__app__dl
+      = image_tag 'bg-topMiddleDl-pict.jpg', size:'1263x400'
+    .main__point
+    .main__pickup__content
+    .main__pickup__content
+    .main__appBanner
+      = image_tag 'bg-appBanner-pict.jpg', size:'1263x370'
+  .footer
