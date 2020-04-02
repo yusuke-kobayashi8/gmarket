@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new
-    if @post.save
+    if @producut.save
       redirect_to root_path
     else
       render :new
