@@ -4,39 +4,39 @@
 
 .main {
   background-color: #f8f8f8;
-  &_visual {
+  &__visual {
     height: 560px;
     width: 100%;
     position: relative;
   
-    &_content {
+    &__content {
       height: 560px;
       width: 100%;
       position: absolute;
       top: 1px;
       padding: 0 60px;
-      &_info {
+      &__info {
         width: 1000px;
         height: 500px;
         padding-top: 200px;
       }
-        &_subtitle{
+        &__subtitle{
           text-shadow: 0 0 5px rgba(0,0,0,0.4);
           font-size: 35px;
           line-height: 1.2;
           color: #fff;
         }
-        &_text {
+        &__text {
           text-shadow: 0 0 5px rgba(0,0,0,0.4);
           font-size: 18px;
           color: #fff;
           line-height: 1.77778;
           margin: 16px 0 0 0;
         }
-        &_btn {
+        &__btn {
           margin-top:10px ;
           display: flex;
-          .google_btn {
+          .google__btn {
            position: relative;
            img {
              position: absolute;
@@ -46,11 +46,11 @@
       }  
     }
   }
-  .main_explain {
+  .main__explain {
     height: 658px;
     background-color: #fff;
     padding: 60px 20px;
-    &_subtitle {
+    &__subtitle {
       text-align: center;
       font-size: 26px;
       line-height: 1.4;
@@ -59,7 +59,7 @@
       padding-bottom: 15px;
       position: relative;
     }
-      .main_explain_subtitle::after {
+      .main__explain__subtitle::after {
         content: "";
         width: 70px;
         height: 4px;
@@ -69,20 +69,20 @@
         left: 50%;
         transform: translateX(-50%);
     }
-    &_list {
+    &__list {
       width: 1020px;
       height: 100%;
       margin: 0 auto;
       display: flex;
       background-color: #fff;
-      &_1 {
+      &__1 {
         width: 30%;
         margin: 16px 5% 0 0;
-        &_pic {
+        &__pic {
           margin-bottom: 20px;
           position: relative;
         }
-          &_number {
+          &__number {
             position: absolute;
             top: 0;
             left: 0;
@@ -94,7 +94,7 @@
             color: white;
             background-color: #3CCACE;
           }
-        &_text {
+        &__text {
           font-weight: bold;
           font-size: 24px;
           line-height: 50px;
@@ -103,20 +103,20 @@
             color: #3CCACE;
           }
         }
-        &_text_dateil{
+        &__text__dateil{
           font-size: 18px;
           line-height: 1.5;
           margin: 16px 0 0;
         }
       }
-      &_2 {
+      &__2 {
         width: 30%;
         margin: 16px 5% 0 0;
-        &_pic {
+        &__pic {
           margin-bottom: 20px;
           position: relative;
         }
-        &_number {
+        &__number {
           position: absolute;
           top: 0;
           left: 0;
@@ -128,7 +128,7 @@
           color: white;
           background-color: #3CCACE;
         }
-         &_text {
+         &__text {
           font-weight: bold;
           font-size: 24px;
           line-height: 50px;
@@ -136,21 +136,21 @@
           span {
             color: #3CCACE;
           }
-         &_dateil {
+         &__dateil {
           font-size: 18px;
           line-height: 1.5;
           margin: 16px 0 0;
           }
         }
       }
-      &_3 {
+      &__3 {
         width: 30%;
         margin: 16px 5% 0 0;
-        &_pic {
+        &__pic {
           margin-bottom: 20px;
           position: relative;
         }
-        &_number {
+        &__number {
           position: absolute;
           top: 0;
           left: 0;
@@ -162,7 +162,7 @@
           color: white;
           background-color: #3CCACE;
         }
-        &_text {
+        &__text {
           font-weight: bold;
           font-size: 24px;
           line-height: 50px;
@@ -170,7 +170,7 @@
           span {
             color: #3CCACE;
           }
-         &_dateil {
+         &__dateil {
           font-size: 18px;
           line-height: 1.5;
           margin: 16px 30px 0;
@@ -179,14 +179,14 @@
     }
     
   }
-  &_app_dl {
+  &__app_dl {
     height: 400px;
   }
-  &_point {
+  &__point {
     height: 733px;
     background-color: red
   }
-  &_pickup_content {
+  &__pickup__content {
     height: 420px;
     background-color: seagreen;
   }
