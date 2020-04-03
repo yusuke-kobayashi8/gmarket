@@ -3,19 +3,21 @@
     = render "header"
   .main
     .main__visual
-      = image_tag 'bg-mainVisual-pict_pc.jpg', size:'1265x560'
+      = image_tag 'bg-mainVisual-pict_pc.jpg', size:'1280x560'
       .main__visual__content
         .main__visual__content__info
           .main__visual__content__subtitle
-            %h2 人生を変えるスマホアプリ
+            %h2 人生を変えるフリマアプリ
           .main__visual__content__text
             FURIMAはだれでもかんたんに出品・購入できる
             %br フリマアプリです
           .main__visual__content__btn
             .ios__btn
-              = image_tag 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg', size:'160x70'
+              = link_to('#', {}) do
+                = image_tag 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg', size:'160x70'
             .google__btn
-              = image_tag 'google-play-badge.png', size:'180x80'
+              = link_to('#', {}) do
+                = image_tag 'google-play-badge.png', size:'180x80'
     .main__explain
       .main__explain__subtitle
         FURIMAが選ばれる3つの理由
@@ -51,10 +53,70 @@
           .main__explain__list__3__text__dateil
             %p 最大3%でお得に出品＆購入！
     .main__app__dl
-      = image_tag 'bg-topMiddleDl-pict.jpg', size:'1263x400'
+      = image_tag 'bg-topMiddleDl-pict.jpg', size:'1280x400'
+      .main__app__dl__contents
+        .main__app__dl__contents__subtitle
+          %a 会員数日本一位
+        .main__app__dl__contents__text
+          FURIMAは、フリマアプリで最も人気。
+          %br 出品・購入回数も業界最多です！
+          ほしかったあの商品に出会えるかもしれません。
+        .main__visual__content__btn
+          .ios__btn
+            = link_to('#', {}) do
+              = image_tag 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg', size:'160x70'
+          .google__btn
+            = link_to('#', {}) do
+              = image_tag 'google-play-badge.png', size:'180x80'
     .main__point
-    .main__pickup__content
-    .main__pickup__content
+      .main__point__subtitle
+        FURIMAの特徴
+      .main__point__iteme
+        .main__point__iteme__1
+          .main__point__iteme__1__pic
+            = image_tag 'icon-01.png', size:'220x340'
+          .main__point__iteme__1__subtitle
+            簡単に売り買いできる
+          .main__point__iteme__1_text
+            %p スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+        .main__point__iteme__2
+          .main__point__iteme__1__pic
+            = image_tag 'icon-03.png', size:'220x340'
+          .main__point__iteme__2__subtitle
+            売上金は即日振り込み可能
+          .main__point__iteme__2_text
+            %p 午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+        .main__point__iteme__1
+          .main__point__iteme__1__pic
+            = image_tag 'icon-04.png', size:'220x340'
+          .main__point__iteme__1__subtitle
+            様々な支払いに対応
+          .main__point__iteme__1_text
+            %p お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+    .main__pickup
+      = render 'puroductscategorie'
+    .main__pickup
+      = render 'puroductsbrand'
     .main__appBanner
-      = image_tag 'bg-appBanner-pict.jpg', size:'1263x370'
+      = image_tag 'bg-appBanner-pict.jpg', size:'1280x370'
+      .main__appBanner__contents
+        .main__appBanner__contents__info 
+          .main__appBanner__contents__info__titl
+            %p だれでもかんたん、人生を変えるフリマアプリ
+          .main__appBanner__contents__info__text
+            %p 今すぐ無料ダウンロード！
+          .main__appBanner__contents__info__btn
+            .ios__btn
+              = link_to('#', {}) do
+                = image_tag 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg', size:'160x70'
+            .google__btn
+              = link_to('#', {}) do
+                = image_tag 'google-play-badge.png', size:'180x80'
   .footer
+    =render 'footer'
+  = link_to('#', {}) do
+    .sell__btn
+      .sell__btn__text
+        %p 出品する
+      .sell__btn__icon
+        = image_tag 'icon_camera.png', size:'54x54'

@@ -1,21 +1,25 @@
-.header_contents
-  .header_up_main
-    .header_up_main_icon
+.header__contents
+  .header__up__main
+    .header__up__main__icon
       = image_tag 'logo.png', size:'140x45'
-    .header_up_main_seach_box
-      = form_tag( )  do
-        = text_field_tag :search,"キーワードから探す"
-      .submit_btn
-        = submit_tag "", class:"btn"
-  .header_under_main
-    .header_under_main_left_list
-      .header_under_main_left_list_categorie
-        %aカテゴリー
-      .header_under_main_left_list_brand
-        %aブランド
-    .header_under_main_right_list
-      .header_under_main_right_list_crrent_user
-        %aログイン
-      .header_under_main_right_list_new_user
-        %a新規登録
-
+    .header__up__main__search__box
+      = form_with do |f| 
+        = f.text_field :keyword, placeholder: "キーワードから探す", class: "search-input" 
+        = label_tag '', class: 'submit__btn' do
+          = icon('fas', 'search search-small', class: 'search__icon')
+          = f.submit "検索", class: "submit-btn-send" 
+         
+  
+  .header__under__main
+    .header__under__main__left__list
+      .header__under__main__left__list__categorie
+        = link_to('#', {}) do
+          カテゴリー
+      .header__under__main__left__list__brand
+        = link_to('#', {}) do
+          ブランド
+    .header__under__main__right__list
+      .header__under__main__right__list__crrent__user
+        %p　ログイン
+      .header__under__main__right__list__new__user
+        %p　新規会員登録
