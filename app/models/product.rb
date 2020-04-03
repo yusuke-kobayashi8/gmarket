@@ -3,4 +3,6 @@ class Product < ApplicationRecord
   belongs_to :user
   belongs_to :brand
   belongs_to :category
+
+  validates :name, :price, :detail, :status, :derivery_cost_id, :days_to_ship_id, :prefecture_id, presence: true
 end
