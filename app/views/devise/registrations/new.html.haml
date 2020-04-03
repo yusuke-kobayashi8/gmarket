@@ -15,15 +15,15 @@
       = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
     .field
       = f.label :パスワード
-      -# - if @minimum_password_length
-      -# %em
-      -#   (#{@minimum_password_length} characters minimum)
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length}文字以上)
       %br/
       = f.password_field :password, autocomplete: "new-password", placeholder: "７文字以上"
     .field
       = f.label :確認用パスワード
       %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用"
+      = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用パスワード"
     %h3.text-left 本人確認
     = f.label :お名前（全角）
     %br/
