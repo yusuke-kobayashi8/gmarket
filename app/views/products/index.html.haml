@@ -13,10 +13,10 @@
             %br フリマアプリです
           .main__visual__content__btn
             .ios__btn
-              %a(href="#")
+              = link_to('#', {}) do
                 = image_tag 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg', size:'160x70'
             .google__btn
-              %a(href="#")
+              = link_to('#', {}) do
                 = image_tag 'google-play-badge.png', size:'180x80'
     .main__explain
       .main__explain__subtitle
@@ -63,10 +63,10 @@
           ほしかったあの商品に出会えるかもしれません。
         .main__visual__content__btn
           .ios__btn
-            %a(href="#")
+            = link_to('#', {}) do
               = image_tag 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg', size:'160x70'
           .google__btn
-            %a(href="#")
+            = link_to('#', {}) do
               = image_tag 'google-play-badge.png', size:'180x80'
     .main__point
       .main__point__subtitle
@@ -107,14 +107,14 @@
             %p 今すぐ無料ダウンロード！
           .main__appBanner__contents__info__btn
             .ios__btn
-              %a(href="#")
+              = link_to('#', {}) do
                 = image_tag 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg', size:'160x70'
             .google__btn
-              %a(href="#")
+              = link_to('#', {}) do
                 = image_tag 'google-play-badge.png', size:'180x80'
   .footer
     =render 'footer'
-  %a(href="#")
+  = link_to('#', {}) do
     .sell__btn
       .sell__btn__text
         %p 出品する

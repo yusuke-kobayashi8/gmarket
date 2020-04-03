@@ -41,8 +41,12 @@ $s: #3CCACE;
         }
         &__btn {
           margin-top:10px ;
+          height: 200px;
           display: flex;
+          position: relative;
           .ios__btn {
+            position: absolute;
+            top: 5px;
             img:hover {
               opacity: 0.5 ;
            }
@@ -50,11 +54,10 @@ $s: #3CCACE;
           .google__btn {
            height: 80px;
            width: 180px;
-           position: relative;
-           img {
-             position: absolute;
-             bottom: 5px;
-           }
+           position: absolute;
+           bottom: 0px;
+           top: 0px;
+           left: 170px;
            img:hover {
             opacity: 0.5 ;
          }
@@ -315,27 +318,29 @@ $s: #3CCACE;
 
         }
         &__btn {
+          margin:10px 420px ;
+          height: 200px;
           display: flex;
-          padding-left: 430px;
-          padding-top: 30px;
-          .ios__btn{
+          position: relative;
+          .ios__btn {
+            position: absolute;
+            top: 5px;
             img:hover {
               opacity: 0.5 ;
            }
-          }
+           }
           .google__btn {
-            position: relative;
-            width: 190px;
-            height: 100px;
-            img {
-              position: absolute;
-              bottom: 25px;
-            }
-            img:hover {
-              opacity: 0.5 ;
-           }
-          }
+           height: 80px;
+           width: 180px;
+           position: absolute;
+           bottom: 0px;
+           top: 0px;
+           left: 170px;
+           img:hover {
+            opacity: 0.5 ;
+         }
         }
+      }  
       }
     }
   }

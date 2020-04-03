@@ -13,9 +13,11 @@
   .header__under__main
     .header__under__main__left__list
       .header__under__main__left__list__categorie
-        %a(href="#") カテゴリー
+        = link_to('#', {}) do
+          カテゴリー
       .header__under__main__left__list__brand
-        %a(href="#") ブランド
+        = link_to('#', {}) do
+          ブランド
     .header__under__main__right__list
       .header__under__main__right__list__crrent__user
         %p　ログイン
