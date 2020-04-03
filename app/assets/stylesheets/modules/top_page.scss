@@ -355,7 +355,7 @@ $s: #3CCACE;
     margin: 0 auto;
     display: flex;
     width: 840px;
-    display: flex;
+
     &__list {
       width: 30%;
       margin-right: 30px;
@@ -378,7 +378,6 @@ $s: #3CCACE;
            a:hover {
             opacity: 0.5 ;
           }
-        
       }
     }
   }
@@ -386,11 +385,11 @@ $s: #3CCACE;
     margin: 0 auto;
     width: 840px;
   }
-    a {
+    p {
       font-size: 15px;
     }
   }
-  a {
+  p {
     box-sizing: border-box;
   }
     .sell__btn {
