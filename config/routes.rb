@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get :my_page
       get :my_page_logout
       get :my_page_credit
+      get :credit_register
     end
   end
 end

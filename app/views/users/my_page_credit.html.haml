@@ -7,5 +7,6 @@
         .credit-main__h3
           クレジットカード一覧
         .credit-main__add-card
-          %input{:type => "submit", :value => "クレジットカードを追加する", :class => "credit-main__add-card--button"}
+          = link_to "/users/credit_register", class:"credit-main__add-card--button" do
+            クレジットカードを追加する
     = render "side_ber"
