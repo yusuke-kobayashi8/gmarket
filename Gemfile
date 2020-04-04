@@ -85,3 +85,4 @@ gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 
 gem 'ancestry'
+gem 'active_hash'
