@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get 'login' => "users#my_page"
   post 'login' => "users#my_page"
   delete "logout" => "users#logout"
-  root 'users#my_page'
+  #root 'users#my_page'
+
+  root 'credit_cards#show'
 
   resources :users do
     collection do
