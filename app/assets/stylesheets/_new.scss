@@ -70,11 +70,11 @@
     display: flex;
 
     #user_first_name {
-      margin-right: 5px;
       @include input-minibox()
     }
 
     #user_family_name {
+      margin-right: 5px;
       @include input-minibox()
     }
   }
@@ -82,11 +82,11 @@
     display: flex;
 
     #user_first_name_kana {
-      margin-right: 5px;
       @include input-minibox()
     }
 
     #user_family_name_kana {
+      margin-right: 5px;
       @include input-minibox()
     }
   }
