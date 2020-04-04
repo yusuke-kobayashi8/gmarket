@@ -12,7 +12,7 @@
     .field
       = f.label :Eメール
       %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
+      = f.email_field :email, autocomplete: "email", placeholder: "PC・携帯どちらでも可"
     .field
       = f.label :パスワード
       - if @minimum_password_length

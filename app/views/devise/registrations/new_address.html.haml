@@ -8,17 +8,17 @@
     = f.label :送付先氏名
     %br/
     .posting_fullname
-      .field       
-        = f.text_field :posting_first_name, autofocus: true, autocomplete: "posting_first_name"
       .field
-        = f.text_field :posting_family_name, autocomplete: "posting_family_name" 
+        = f.text_field :posting_family_name, autofocus: true, autocomplete: "posting_family_name"
+      .field       
+        = f.text_field :posting_first_name, autocomplete: "posting_first_name"
     = f.label :送付先氏名（ふりがな）
     %br/
-    .posting_fullname-kana  
+    .posting_fullname-kana
+      .field
+        = f.text_field :posting_family_name_f, autocomplete: "posting_family_name_f" 
       .field      
         = f.text_field :posting_first_name_f, autocomplete: "posting_first_name_f"
-      .field
-        = f.text_field :posting_family_name_f, autocomplete: "posting_family_name_f"
     .field
       = f.label :郵便番号
       %br/
