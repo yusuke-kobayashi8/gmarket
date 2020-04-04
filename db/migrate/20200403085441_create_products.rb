@@ -4,8 +4,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string     :name
       t.integer    :price
       t.text       :detail
-      t.integer    :status
-      t.integer    :derivery_cost_id
+      t.integer    :status_id
+      t.integer    :delivery_cost_id
       t.integer    :days_to_ship_id
       t.integer    :prefecture_id
       t.references :user,     foreign_key: true
