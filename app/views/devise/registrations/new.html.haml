@@ -4,7 +4,7 @@
   %h2.signup 会員情報入力
   .signup-main__contents
   = form_for(@user, url: user_registration_path) do |f|
-    = render "devise/shared/error_messages", resource: @user
+    -# = render "devise/shared/error_messages", resource: @user
     .field
       = f.label :ニックネーム
       %br/

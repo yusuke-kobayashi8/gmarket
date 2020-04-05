@@ -4,7 +4,7 @@
   %h2.signup 商品送付先住所情報入力
   .signup-main__contents
   = form_for @address do |f|
-    = render "devise/shared/error_messages", resource: @address
+    -# = render "devise/shared/error_messages", resource: @address
     = f.label :送付先氏名
     %br/
     .posting_fullname
