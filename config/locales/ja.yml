@@ -9,6 +9,15 @@ ja:
         family_name_kana: "名前（カナ）"
         first_name_kana: "名字（カナ）"
         birthday: "誕生日"
+      address:
+        postal_code: "郵便番号"
+        prefecture_id: "都道府県"
+        city: "市区町村"
+        address: "番地"
+        posting_family_name: "送付先氏名の名字"
+        posting_first_name: "送付先氏名の名前"
+        posting_family_name_f: "送付先氏名の名字（カナ）"
+        posting_first_name_f: "送付先氏名の名前（カナ）"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

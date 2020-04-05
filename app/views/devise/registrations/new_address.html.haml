@@ -9,16 +9,16 @@
     %br/
     .posting_fullname
       .field
-        = f.text_field :posting_family_name, autofocus: true, autocomplete: "posting_family_name"
+        = f.text_field :posting_family_name, autofocus: true, autocomplete: "posting_family_name", placeholder: "名字"
       .field       
-        = f.text_field :posting_first_name, autocomplete: "posting_first_name"
-    = f.label :送付先氏名（ふりがな）
+        = f.text_field :posting_first_name, autocomplete: "posting_first_name", placeholder: "名前"
+    = f.label :送付先氏名（フリガナ）
     %br/
     .posting_fullname-kana
       .field
-        = f.text_field :posting_family_name_f, autocomplete: "posting_family_name_f" 
+        = f.text_field :posting_family_name_f, autocomplete: "posting_family_name_f", placeholder: "名字（カナ）"
       .field      
-        = f.text_field :posting_first_name_f, autocomplete: "posting_first_name_f"
+        = f.text_field :posting_first_name_f, autocomplete: "posting_first_name_f", placeholder: "名前（カナ）"
     .field
       = f.label :郵便番号
       %br/
