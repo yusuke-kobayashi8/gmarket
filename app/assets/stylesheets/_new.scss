@@ -2,16 +2,16 @@
   height: 80%;
   width: 100vw;
   background-color: rgb(224, 221, 221);
-  padding: 20px;
+  padding: 60px;
   &__content{
     background-color: white;
     height: 100%;
-    width: 400px;
+    max-width: 700px;
     margin: auto;
     font-size: 10px;
     &__box{
       height: 100%;
-      padding: 30px;
+      padding: 60px;
       &__name{
         display: flex;
         &__text1{
@@ -43,7 +43,7 @@
           display: none;
         }
         &__icon{
-          line-height: 100px;
+          line-height: 70px;
           text-align: center;
           height: 50px;
           width:100%;
@@ -53,7 +53,7 @@
     }
     &__box2{
       height: 100%;
-      padding: 30px;
+      padding: 60px;
       &__item{
         display: flex;
         margin-bottom: 5px;
@@ -95,7 +95,7 @@
     }
     &__box3{
       height: 100%;
-      padding: 30px;
+      padding: 60px;
       &__category{
         display: flex;
         margin-top: 20px;
@@ -109,10 +109,10 @@
       &__form1{
         width: 100%;
         margin: 10px 0 20px 0;
-        background-color: white;
         &__category{
           height: 30px;
-          width: 100%
+          width: 100%;
+          background-color: white;
         }
       }
       &__brand{
@@ -125,7 +125,7 @@
       }
       &__form2{
         height: 22px;
-        width: 99%;
+        width: 100%;
         margin: 5px 0 30px 0;
         border-radius: 5px;
       }
@@ -151,7 +151,7 @@
     }
     &__box4{
       height: 100%;
-      padding: 30px;
+      padding: 60px;
       &__shipping__charges{
         margin-top: 20px;
         display: flex;
@@ -212,7 +212,7 @@
     }
     &__box5{
       height: 100%;
-      padding: 30px;
+      padding: 60px;
       font: inherit;
       &__price{
         padding: 10px 0 10px 0;
@@ -223,7 +223,7 @@
           margin-bottom: 10px;
           }
         &__name2{
-          height: 15px;
+          height: 14px;
           margin: 18px 0 0 10px;
           background-color: red;
           color: white;
@@ -231,7 +231,7 @@
           line-height:  14px;       
         }
         &__span{
-          margin: 0 5px 0 80px;
+          margin: 0 5px 0 205px;
         }
         &__form{
           height: 25px;
@@ -240,7 +240,7 @@
           border: 1px  rgb(224, 221, 221);
           text-align: right;
           &__4{
-            height: 25px;
+            height: 30px;
             width: 100%;
             margin: 5px 0 20px;
             border-radius: 5px;
@@ -269,30 +269,28 @@
         &__exhibition{
           height: 30px;
           width: 200px;
-          margin-bottom: 24px;
           text-align: center;
           background-color: #3CCACE;
           border-radius: 2px;
           color: white;
           font-size: 12px;
           line-height: 30px;
-          margin-left: 80px;
+          margin: 0 0 25px 200px;
         }
         &__draft{
           height: 30px;
           width: 200px;
-          margin: auto;
-          margin-bottom: 24px;
+          margin: 0 0 25px 200px;
           text-align: center;
           background-color: rgb(224, 221, 221);
           border-radius: 2px;
           font-size: 12px;
-          margin-left: 80px;
+         
         }
         &__return{
           color: #0095ee;
           text-align: center;
-          margin-left: 150px;
+          margin: 0 0 25px 280px;
           border: 0;
         }
       }
