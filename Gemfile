@@ -84,3 +84,5 @@ gem 'font-awesome-sass'
 
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
+
+gem 'font-awesome-sass'
