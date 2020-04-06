@@ -80,6 +80,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 gem "haml-rails"
+gem 'font-awesome-sass'
 
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'

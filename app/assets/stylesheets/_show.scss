@@ -1,0 +1,301 @@
+.seller__main{
+  height: 80%;
+  width: 100vw;
+  background-color: rgb(224, 221, 221);
+  padding: 20px;
+  &__content{
+    background-color: white;
+    height: 100%;
+    width: 400px;
+    margin: auto;
+    font-size: 10px;
+    &__box{
+      height: 100%;
+      padding: 30px;
+      &__name{
+        display: flex;
+        &__text1{
+          padding-bottom: 20px;
+        }
+        &__text2{
+          height: 15px;
+          text-align: center;
+          background-color: red;
+          margin-left: 15px;
+          color: white;
+          border-radius: 2px;
+        }
+      }
+      &__text{
+        padding-top: 5px;
+      }
+      &__image{
+        background-color: rgb(245, 245, 245);
+        border: 1px dashed gray;
+        margin-top: 5px; 
+        size: 10px;
+        &__upload{
+          text-align: center;
+          width: 100%;
+          padding-bottom: 20px;
+        }
+        &__area{
+          display: none;
+        }
+        &__icon{
+          line-height: 100px;
+          text-align: center;
+          height: 50px;
+          width:100%;
+          font-size: 15px;
+        }
+      }
+    }
+    &__box2{
+      height: 100%;
+      padding: 30px;
+      &__item{
+        display: flex;
+        margin-bottom: 5px;
+        &__name2{
+          margin-left: 15px;
+          background-color: red;
+          color: white;
+          border-radius: 2px;
+        }
+      }
+      &__form4{
+        height: 25px;
+        width: 100%;
+        margin: 5px 0 20px;
+        border-radius: 5px;
+        border: solid 1px;
+        border-color: #ccc;
+      }
+      &__expeanatory{
+        display: flex;
+        &__text2{
+          margin-left: 15px;
+          background-color: red;
+          color: white;
+          border-radius: 2px;
+        }
+      }
+      &__form2{
+        height: 100px;
+        width: 100%;
+        margin: 5px 0 20px 0;
+        border-radius: 4px;
+        border-color: #ccc;
+      }
+      &__textcount{
+        color: gray;
+        text-align: right;
+      }
+    }
+    &__box3{
+      height: 100%;
+      padding: 30px;
+      &__category{
+        display: flex;
+        margin-top: 20px;
+        &__name2{
+          margin-left: 10px;
+          background-color: red;
+          color: white;
+          border-radius: 2px;
+        }
+      }
+      &__form1{
+        width: 100%;
+        margin: 10px 0 20px 0;
+        background-color: white;
+        &__category{
+          height: 30px;
+          width: 100%
+        }
+      }
+      &__brand{
+        display: flex;
+        &__name2{
+          margin-left: 10px;
+          background-color: gray;
+          color: white;
+        }
+      }
+      &__form2{
+        height: 22px;
+        width: 99%;
+        margin: 5px 0 30px 0;
+        border-radius: 5px;
+      }
+      &__status{
+        display: flex;
+        margin: 10px 0 0 0;
+        &__name2{
+          margin-left: 10px;
+          background-color: red;
+          color: white;
+          border-radius: 2px;
+        }
+      }
+      &__form3{
+        width: 100%;
+        margin: 10px 0 20px 0;
+        &__category{
+          height: 30px;
+          width: 100%;
+          background-color: white;
+        }
+      }
+    }
+    &__box4{
+      height: 100%;
+      padding: 30px;
+      &__shipping__charges{
+        margin-top: 20px;
+        display: flex;
+        &__name2{
+          margin-left: 10px;
+          background-color: red;
+          color: white;
+          border-radius: 2px;
+        }
+      }
+      &__form1{
+        width: 100%;
+        margin: 10px 0 20px 0;
+        &__category{
+          height: 30px;
+          width: 100%;
+          background-color: white;
+        }
+      }
+      &__shipping__area{
+        margin-top: 20px;
+        display: flex;
+        &__name2{
+          margin-left: 10px;
+          background-color: red;
+          color: white;
+          border-radius: 2px;
+        }
+      }
+      &__form2{
+        width: 100%;
+        margin: 10px 0 20px 0;
+        &__category{
+          height: 30px;
+          width: 100%;
+          background-color: white;
+        }
+      }
+      &__shipping__days{
+        margin-top: 20px;
+        display: flex;
+        &__name2{
+          margin-left: 10px;
+          background-color: red;
+          color: white;
+          border-radius: 2px;
+        }
+      }
+      &__form3{
+        width: 100%;
+        margin: 10px 0 20px 0;
+        &__category{
+          height: 30px;
+          width: 100%;
+          background-color: white;
+        }
+      }
+    }
+    &__box5{
+      height: 100%;
+      padding: 30px;
+      font: inherit;
+      &__price{
+        padding: 10px 0 10px 0;
+        display: flex;
+        line-height: 50px;
+        &__name1{
+          align-items: center;
+          margin-bottom: 10px;
+          }
+        &__name2{
+          height: 15px;
+          margin: 18px 0 0 10px;
+          background-color: red;
+          color: white;
+          border-radius: 2px;
+          line-height:  14px;       
+        }
+        &__span{
+          margin: 0 5px 0 80px;
+        }
+        &__form{
+          height: 25px;
+          width: 50%;
+          background-color: white;
+          border: 1px  rgb(224, 221, 221);
+          text-align: right;
+          &__4{
+            height: 25px;
+            width: 100%;
+            margin: 5px 0 20px;
+            border-radius: 5px;
+            border: solid 1px;
+            border-color: #ccc;
+            text-align: right;
+          }
+        }
+      }
+      &__commission{
+        width: 100%;
+        margin: 10px 0 20px;
+        display: flex;
+        &__name1{
+          margin-left: auto;
+        }
+      }
+        &__commission2{
+          width: 100%;
+          margin: 20px 0 30px;
+          display: flex;
+        }  
+      &__btn{
+        margin-bottom: 32px;
+        width: 100%;
+        &__exhibition{
+          height: 30px;
+          width: 200px;
+          margin-bottom: 24px;
+          text-align: center;
+          background-color: #3CCACE;
+          border-radius: 2px;
+          color: white;
+          font-size: 12px;
+          line-height: 30px;
+          margin-left: 80px;
+        }
+        &__draft{
+          height: 30px;
+          width: 200px;
+          margin: auto;
+          margin-bottom: 24px;
+          text-align: center;
+          background-color: rgb(224, 221, 221);
+          border-radius: 2px;
+          font-size: 12px;
+          margin-left: 80px;
+        }
+        &__return{
+          color: #0095ee;
+          text-align: center;
+          margin-left: 150px;
+          border: 0;
+        }
+      }
+    }
+  }
+}
