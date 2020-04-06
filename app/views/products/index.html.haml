@@ -1,6 +1,5 @@
 .warappr
   .header
-    = render "header"
   .main
     .main__visual
       = image_tag 'bg-mainVisual-pict_pc.jpg', size:'1265x560'
@@ -58,3 +57,8 @@
     .main__appBanner
       = image_tag 'bg-appBanner-pict.jpg', size:'1263x370'
   .footer
+
+  = link_to new_product_path do
+    出品
+  .contener
+    = render @products
