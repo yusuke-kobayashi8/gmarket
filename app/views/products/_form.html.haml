@@ -1,0 +1,12 @@
+= form_for @product do |f|
+  = f.text_field :name, placeholder: "name"
+  = f.number_field :price, placeholder: "price"
+  = f.collection_select :status_id, Status.all, :id, :name, include_blank: "選択してください"
+  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: "選択してください"
+  = f.collection_select :delivery_cost_id, DeliveryCost.all, :id, :name, include_blank: "選択してください"
+  = f.collection_select :days_to_ship_id, DaysToShip.all, :id, :name, include_blank: "選択してください"
+  = f.fields_for :images do |i|
+    = i.file_field :image
+  = f.fields_for :images do |i|
+    = i.file_field :image
+  = f.submit
