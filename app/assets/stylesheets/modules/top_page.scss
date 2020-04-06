@@ -1,0 +1,411 @@
+$f: #ffffff;
+$s: #3CCACE;
+* {
+  box-sizing: border-box;
+}
+.warappr {
+  overflow: hidden;
+.main {
+  background-color: #f8f8f8;
+  &__visual {
+    height: 560px;
+    width: 100vw;
+    position: relative;
+  
+    &__content {
+      height: 560px;
+      width: 100%;
+      position: absolute;
+      top: 1px;
+      padding: 0 60px;
+      &__info {
+        width: 1000px;
+        height: 500px;
+        padding-top: 200px;
+      }
+        &__subtitle{
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          font-size: 60px;
+          line-height: 1.2;
+          color: $f;
+          h2 {
+            font-weight: normal;
+          }
+        }
+        &__text {
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          font-size: 18px;
+          color: $f;
+          line-height: 1.77778;
+          margin: 16px 0 0 0;
+        }
+        &__btn {
+          margin-top:10px ;
+          height: 200px;
+          display: flex;
+          position: relative;
+          .ios__btn {
+            position: absolute;
+            top: 5px;
+            img:hover {
+              opacity: 0.5 ;
+           }
+           }
+          .google__btn {
+           height: 80px;
+           width: 180px;
+           position: absolute;
+           bottom: 0px;
+           top: 0px;
+           left: 170px;
+           img:hover {
+            opacity: 0.5 ;
+         }
+        }
+      }  
+    }
+  }
+  .main__explain {
+    height: 658px;
+    background-color: $f;
+    padding: 60px 20px;
+    &__subtitle {
+      text-align: center;
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+      .main__explain__subtitle::after {
+        content: "";
+        width: 70px;
+        height: 4px;
+        background-color: $s;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &__list {
+      width: 1020px;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      background-color: $f;
+      &__1 {
+        width: 30%;
+        margin: 16px 5% 0 0;
+        &__pic {
+          margin-bottom: 20px;
+          position: relative;
+        }
+          &__number {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 56px;
+            height: 55px;
+            font-size: 30px;
+            padding-left: 20px;
+            line-height: 55px;
+            color: $f;
+            background-color: $s;
+          }
+        &__text {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 50px;
+          padding-left: 60px;
+          span {
+            color: $s;
+          }
+        }
+        &__text__dateil{
+          font-size: 18px;
+          line-height: 1.5;
+          margin: 16px 0 0;
+        }
+      }
+      &__2 {
+        width: 30%;
+        margin: 16px 5% 0 0;
+        &__pic {
+          margin-bottom: 20px;
+          position: relative;
+        }
+        &__number {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 56px;
+          height: 55px;
+          font-size: 30px;
+          padding-left: 20px;
+          line-height: 55px;
+          color: $f;
+          background-color: $s;
+        }
+         &__text {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 50px;
+          padding-left: 35px;
+          span {
+            color: $s;
+          }
+         &__dateil {
+          font-size: 18px;
+          line-height: 1.5;
+          margin: 16px 0 0;
+          }
+        }
+      }
+      &__3 {
+        width: 30%;
+        margin: 16px 5% 0 0;
+        &__pic {
+          margin-bottom: 20px;
+          position: relative;
+        }
+        &__number {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 56px;
+          height: 55px;
+          font-size: 30px;
+          padding-left: 20px;
+          line-height: 55px;
+          color: $f;
+          background-color: $s;
+        }
+        &__text {
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 50px;
+          padding-left: 60px;
+          span {
+            color: $s;
+          }
+         &__dateil {
+          font-size: 18px;
+          line-height: 1.5;
+          margin: 16px 30px 0;
+          }
+      }
+    }
+   }
+  }
+  &__app__dl {
+    height: 400px;
+    position: relative;
+    &__contents {
+      margin-left: 150px ;
+      position: absolute;
+      height: 220px;
+      width: 100%;
+      top: 130px;
+      &__subtitle {
+        font-size: 27px;
+        font-weight: bold;
+        line-height: 1.4;
+        color: $f;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        text-align: left;
+      }
+      &__text {
+        font-size: 18px;
+        margin: 20px 0 30px;
+        line-height: 1.5;
+        color: $f;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        text-align: left;
+      }
+    }
+
+  }
+  &__point {
+    height: 733px;
+    background-color: $f;
+    padding: 60px 100px;
+    &__subtitle {
+      text-align: center;
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: bold;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    .main__point__subtitle::after {
+      content: "";
+      width: 70px;
+      height: 4px;
+      background-color: $s;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+     }
+     &__iteme {
+       width: 100%;
+       display: flex;
+       &__1 {
+         width: 33%;
+         padding: 0 20px;
+         &__pic {
+          margin: 50px;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          
+         }
+         &__subtitle {
+          margin: 38px 60px 20px;
+          font-size: 19px;
+          font-weight: bold;
+
+         }
+         &_text {
+          margin: 0 0 40px;
+          font-size: 17px;
+          font-weight: 200;
+          text-align: left;
+         }
+       }
+       &__2 {
+        width: 31%;
+        padding: 0 20px;
+       }
+       &__2__subtitle {
+        margin: 38px 28px 20px;
+        font-size: 19px;
+        font-weight: bold;
+       }
+     }
+  }
+  &__pickup {
+    margin-bottom: 80px;
+  }
+  &__appBanner {
+    line-height:0;
+    position: relative;
+    &__contents {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 1px;
+      padding: 100px 40px;
+      &__info {
+        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+        height: 100%;
+        &__titl {
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          font-size: 24px;
+          font-weight: bold;
+          line-height: 1.4;
+          text-align: center;
+          color: $f;
+          margin-bottom: 10px;
+        }
+        &__text {
+          font-size: 35px;
+          text-shadow: 0 0 5px rgba(0,0,0,0.4);
+          text-align: center;
+          color: $f;
+          padding: 10px;
+
+        }
+        &__btn {
+          margin:10px 420px ;
+          height: 200px;
+          display: flex;
+          position: relative;
+          .ios__btn {
+            position: absolute;
+            top: 5px;
+            img:hover {
+              opacity: 0.5 ;
+           }
+           }
+          .google__btn {
+           height: 80px;
+           width: 180px;
+           position: absolute;
+           bottom: 0px;
+           top: 0px;
+           left: 170px;
+           img:hover {
+            opacity: 0.5 ;
+         }
+        }
+      }  
+      }
+    }
+  }
+}
+.footer {
+  height: 355px;
+  padding: 60px 0;
+  color: $f;
+  background-color: #272727;
+  text-align: center;
+  &__contents {
+    margin: 0 auto;
+    display: flex;
+    width: 840px;
+
+    &__list {
+      width: 30%;
+      margin-right: 30px;
+      &__head {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      ul {
+        list-style: none;
+        li {
+          a{
+            color:$f;
+            text-decoration: none;
+            font-size: 12px;
+            line-height: 32px;
+            padding-bottom: 1px;
+          }
+        }
+           a:hover {
+            opacity: 0.5 ;
+          }
+      }
+    }
+  }
+  &__logo {
+    margin: 0 auto;
+    width: 840px;
+  }
+    p {
+      font-size: 15px;
+    }
+  }
+
+    .sell__btn {
+    width: 120px;
+    background: $s;
+    text-align: center;
+    border-radius: 4%;
+    bottom: 32px;
+    right: 32px;
+    position: fixed;
+    padding: 15px;
+    &__text {
+    color: $f;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    }
+  }
+
+}
