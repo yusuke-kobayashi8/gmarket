@@ -51,7 +51,30 @@ ActiveRecord::Schema.define(version: 2020_04_03_085517) do
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "postal_code", null: false
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
+    t.string "address", null: false
+    t.string "building"
+    t.string "posting_family_name", null: false
+    t.string "posting_first_name", null: false
+    t.string "posting_family_name_f", null: false
+    t.string "posting_first_name_f", null: false
+    t.string "telephone"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nickname", null: false
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.date "birthday", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -67,4 +90,5 @@ ActiveRecord::Schema.define(version: 2020_04_03_085517) do
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
+  add_foreign_key "addresses", "users"
 end
