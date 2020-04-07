@@ -1,0 +1,12 @@
+.wallpaper
+  .main
+    .main__right-contents
+      .credit-head
+        支払い方法
+      .credit-main
+        .credit-main__h3
+          クレジットカード一覧
+        .credit-main__add-card
+          = link_to "/users/credit_register", class:"credit-main__add-card--button" do
+            クレジットカードを追加する
+    = render "/users/side_ber"

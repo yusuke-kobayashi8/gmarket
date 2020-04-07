@@ -121,8 +121,8 @@ a {
 .logout-button {
   height: 48px;
   width: 350px;
-  background-color: #ea352d;
-  border: 1px solid #ea352d;
+  background-color: #3ccace;
+  border: 1px solid #3ccace;
   color: #ffffff;
   font-size: 16px;
   position: absolute;
@@ -137,10 +137,77 @@ a {
   width: 700px;
   background-color: #ffffff;
   padding: 12px 24px;
+  margin: 0 0 2px 0;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
+
+.credit-card {
+  width: 700px;
+  height: 450px;
+  padding: 40px 40px 64px;
+  background-color: #ffffff;
+  &__content {
+    margin: 0 135px;
+    &__label {
+      color: #333333;
+      font-size: 14px;
+    }
+    &__required {
+      color: #ffffff;
+      background-color: #3ccace;
+      padding: 2px 4px;
+      font-size: 14px;
+      border-radius: 2px;
+      margin: 0 150px 0 0;
+    }
+    &__number {
+      height: 50px;
+      width: 100%;
+      margin: 8px 0 0;
+      padding: 10px 16px 8px;
+      font-size: 14px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      outline: none;
+    }
+    &__card-list {
+      margin: 8px 0 0;
+    }
+    &__exp {
+      height: 50px;
+      width: 132px;
+      color: #333333;
+      margin: 8px 0 0;
+      border: 1px solid #cccccc;
+      background-color: #ffffff;
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+    }
+    &__date {
+      font-size: 14px;
+      color: #333333;
+      margin: 0 8px;
+    }
+    &__add-button {
+      height: 48px;
+      width: 350px;
+      background-color: #3ccace;
+      border: 1px solid #3ccace;
+      color: #ffffff;
+      font-size: 16px;
+      text-align: center;
+      line-height: 50px;
+      outline: none;
+      display: block;
+      cursor: pointer;
+      margin: 32px 0 0;
+    }
+  }
+}
+
 .credit-main {
   height: 250px;
   width: 700px;
@@ -160,8 +227,8 @@ a {
     &--button {
       height: 48px;
       width: 320px;
-      background-color: #ea352d;
-      border: 1px solid #ea352d;
+      background-color: #3ccace;
+      border: 1px solid #3ccace;
       color: #ffffff;
       font-size: 16px;
       text-align: center;

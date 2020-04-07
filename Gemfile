@@ -84,4 +84,5 @@ gem "haml-rails"
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 
-gem 'payjp'
+gem 'payjp' # PAY.JPのgem
+gem 'dotenv-rails' # 環境変数を簡単に定義できるENVファイルを対応させるgem
