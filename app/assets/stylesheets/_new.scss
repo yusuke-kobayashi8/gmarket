@@ -312,6 +312,7 @@
 @mixin input-minibox {
   height: 38px;
   padding: 10px 16px 8px;
+  border-radius: 4px;
   border: 1px solid #ccc;
   background: #fff;
   line-height: 1.5;
