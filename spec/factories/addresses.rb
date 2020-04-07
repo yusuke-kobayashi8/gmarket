@@ -1,7 +1,5 @@
 FactoryBot.define do
 
-  
-
   factory :address do
     postal_code {1234567}
     prefecture_id {1}
