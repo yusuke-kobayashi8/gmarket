@@ -87,3 +87,8 @@ gem 'mini_magick'
 
 gem 'ancestry'
 gem 'active_hash'
+
+gem 'payjp' # PAY.JPのgem
+gem 'dotenv-rails' # 環境変数を定義できるENVファイルを対応させるgem
+
+gem 'devise'

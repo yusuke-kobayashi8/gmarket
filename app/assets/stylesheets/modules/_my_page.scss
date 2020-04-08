@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wallpaper {
+  background-color: #f5f5f5;
+  padding-top: 40px;
+  height: 900px;
+  width: 100%;
+  position: relative;
+}
+
+
+.main {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: calc(100% - 40px);
+  width: 1020px;
+  background-color: #f5f5f5;
+  &__right-contents {
+    width: 700px;
+    height: 100%;
+    float: right;
+    background-color: #f5f5f5;
+    &__user-icon {
+      height: 200px;
+      background-color: #ffffff;
+      margin: 0 0 40px 0;
+      position: relative;
+      &__a {
+        height: 110px;
+        width: 700px;
+        position: absolute;
+        top: 45px;
+        text-align: center;
+        &--user-name {
+          color: #333333;
+          font-size: 14px;
+          margin-top: 10px;
+        }
+      }
+    }
+    &__purchase-container {
+      height: 382px;
+      margin: 40px 0 0;
+      position: relative;
+      margin: 0 0 40px 0;
+      &--h2 {
+        height: 72px;
+        color: #333333;
+        line-height: 72px;
+        padding: 0 16px;
+        font-weight: bold;
+        background-color: #fafafa;
+      }
+      &__tabs {
+        height: 72px;
+        display: flex;
+        &--a {
+          width: 350px;
+          line-height: 72px;
+          text-align: center;
+          color: #333333;
+          font-weight: bold;
+          background-color: #eeeeee;
+        }
+      }
+      &__info {
+        height: 238px;
+        width: 700px;
+        color: #cccccc;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        background-color: #ffffff;
+        padding: 160px 0 60px;
+      }
+    }
+  }
+  &__left-contents {
+    float: left;
+    width: 280px;
+    height: 100%;
+    margin: 0px 40px 0 0;
+    background-color: #f5f5f5;
+    &__navi-items {
+      height: 48px;
+      width: 280px;
+      background-color: #ffffff;
+      padding: 16px;
+      border-bottom: solid 1px #f5f5f5;
+      display: block;
+      color: #333333;
+      &--aa {
+        height: 48px;
+        background-color: #eeeeee;
+        padding: 16px;
+        border-bottom: solid 1px #f5f5f5;
+        &--icon {
+          float: right;
+          color: #fafafa;
+        }
+      }
+    }
+    &__h3 {
+      height: 16px;
+      margin-top: 40px;
+      color: #333333;
+      font-weight: bold;
+    }
+  }
+}
+
+.logout-button {
+  height: 48px;
+  width: 350px;
+  background-color: #3ccace;
+  border: 1px solid #3ccace;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  top: 75px;
+  left: 190px;
+  outline: none;
+  cursor: pointer;
+}
+
+.credit-head {
+  height: 50px;
+  width: 700px;
+  background-color: #ffffff;
+  padding: 12px 24px;
+  margin: 0 0 2px 0;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.credit-card {
+  width: 700px;
+  height: 450px;
+  padding: 40px 40px 64px;
+  background-color: #ffffff;
+  &__content {
+    margin: 0 135px;
+    &__label {
+      color: #333333;
+      font-size: 14px;
+    }
+    &__required {
+      color: #ffffff;
+      background-color: #3ccace;
+      padding: 2px 4px;
+      font-size: 14px;
+      border-radius: 2px;
+      margin: 0 150px 0 0;
+    }
+    &__number {
+      height: 50px;
+      width: 100%;
+      margin: 8px 0 0;
+      padding: 10px 16px 8px;
+      font-size: 14px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      outline: none;
+    }
+    &__card-list {
+      margin: 8px 0 0;
+    }
+    &__exp {
+      height: 50px;
+      width: 132px;
+      color: #333333;
+      margin: 8px 0 0;
+      border: 1px solid #cccccc;
+      background-color: #ffffff;
+      font-size: 14px;
+      outline: none;
+      cursor: pointer;
+    }
+    &__date {
+      font-size: 14px;
+      color: #333333;
+      margin: 0 8px;
+    }
+    &__add-button {
+      height: 48px;
+      width: 350px;
+      background-color: #3ccace;
+      border: 1px solid #3ccace;
+      color: #ffffff;
+      font-size: 16px;
+      text-align: center;
+      line-height: 50px;
+      outline: none;
+      display: block;
+      cursor: pointer;
+      margin: 32px 0 0;
+    }
+  }
+}
+
+.credit-main {
+  height: 250px;
+  width: 700px;
+  background-color: #ffffff;
+  margin: 2px 0 0 0;
+  padding: 60px;
+  &__h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    padding: 0 130px;
+  }
+  &__add-card {
+    height: 110px;
+    width: 100%;
+    padding: 25px 130px;
+    &--button {
+      height: 48px;
+      width: 320px;
+      background-color: #3ccace;
+      border: 1px solid #3ccace;
+      color: #ffffff;
+      font-size: 16px;
+      text-align: center;
+      line-height: 50px;
+      outline: none;
+      display: block;
+      cursor: pointer;
+    }
+  }
+}
+

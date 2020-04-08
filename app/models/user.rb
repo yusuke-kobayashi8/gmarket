@@ -4,7 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
-
-        # 動作確認のため仮置きしたものです。
+  has_many :creditcard
 end

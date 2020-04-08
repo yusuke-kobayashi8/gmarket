@@ -1,0 +1,6 @@
+.wallpaper
+  .main
+    .main__right-contents
+      .main__right-contents__user-icon
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout-button"
+    = render "side_ber"
