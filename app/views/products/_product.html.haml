@@ -1,0 +1,18 @@
+-# 動作確認用の仮置きのビューです
+
+.content
+  %p
+    = product.name
+  %p
+    = product.price
+  %p
+    = product.status.name
+  %p
+    = product.prefecture.name
+  %p
+    = product.delivery_cost.name
+  %p
+    = product.days_to_ship.name
+
+  - product.images.each do |image|
+    = image_tag image.image.url
