@@ -24,12 +24,12 @@
 |price|integer|null: false|
 |detail|text|null: false|
 |status|integer|null: false|
-|derivery_fee|string|null: false|
-|derivery_days|string|null: false|
-|place|string|null: false|
-|user|references|null: false, foreign_key: true|
-|brand|references|foreign_key: true|
-|category|references|null: false, foreign_key: true|
+|derivery_cost_id|integer|null: false|
+|days_to_ship_id|integer|null: false|
+|prefecture_id|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
+|brand_id|references|foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - has_one :order
