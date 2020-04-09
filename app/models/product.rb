@@ -3,6 +3,8 @@ class Product < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :brand, optional: true
   belongs_to :category, optional: true
+# 　belongs_to :categorie
+ 
   
   belongs_to_active_hash :status
   belongs_to_active_hash :prefecture
