@@ -113,7 +113,7 @@
                 = image_tag 'google-play-badge.png', size:'180x80'
   .footer
     =render 'footer'
-  = link_to('#', {}) do
+  = link_to new_product_path do
     .sell__btn
       .sell__btn__text
         %p 出品する
@@ -122,7 +122,5 @@
   
   
   -# 以下動作確認用の仮置きのビューです
-  = link_to new_product_path do
-    出品
   .contener
     = render @products
