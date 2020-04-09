@@ -306,12 +306,13 @@
   .signup-header {
     height: 128px;
     text-align: center;
+    align-items: center;
     max-width: inherit;
     font-size: inherit;
     display: flex;
 
     &__box1 {
-      margin: 40px 0 0 400px;
+      margin: 0 auto;
     }
 
     .progress-bar {
@@ -335,20 +336,25 @@
     margin: 0 auto;
     align-items: center;
     background-color: #ffffff;
-    padding: 20px 5px;
+    padding: 40px 5px;
+    // height: 300px;
 
     &__box {
       margin: 0 150px;
 
       &__top {
         font-size: 22px;
-        padding: 32px;
+        padding: 12px 32px 52px;
         text-align: center;
         border-bottom: 1px solid #f5f5f5;
       }
+    &__contents {
+      height: 300px;
+      width: 300px;
     }
-      .signup {
-        text-align: center;
+      
+      .field {
+        margin-top: 10px;
       }
 
       #user_nickname {
@@ -368,16 +374,17 @@
       }
 
       .text-box {
-        margin-top: 10px;
+        margin-top: 20px;
         height: 87px;
         width: 375px;
+        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+      }
 
-        p {
-          width: 375px;
-          margin-top: 5px;
-          word-wrap: normal;
-          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-        }
+      p {
+        width: 375px;
+        margin-top: 5px;
+        word-wrap: normal;
+        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
       }
 
       .fullname{
@@ -411,10 +418,24 @@
 
       #user_birthday_2i {
         @include birthday-box();
+
       }
 
       #user_birthday_3i {
         @include birthday-box();
+      }
+
+      .form-info-text {
+        color: #888;
+      }
+
+      .form-text {
+        margin-top: 40px;
+
+        a {
+          color: #0099e8;
+          text-decoration: none;
+        }
       }
 
       .submit-btn {
@@ -427,60 +448,103 @@
         transition: all ease-out .3s;
         cursor: pointer;
         text-align: center;
-        background-color: #66FFFF;
+        background-color: #3CCACE;
         margin: 20px 0 0 0;
-      }     
+      }
 
+      .form-text-right {
+        margin-top: 24px;
+        text-align: right;
+        
+        a {
+          color: #0099e8;
+          text-decoration: none;
+        }
+      }
+
+      .form-bottom-text {
+        margin-top: 44px;
+        background-color: #f5f5f5;
+        padding: 8px 16px;
+        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+        font-size: 14px;
+        color: #888;
+      }
+
+      .field-check {
+        margin-bottom: 60px;
+      }
+      
+      #address_posting_family_name {
+        margin-right: 5px;
+        @include input-minibox();
+      }
+      
+      #address_posting_first_name {
+        @include input-minibox();
+      }
+      
+      #address_posting_family_name_f {
+        margin-right: 5px;
+        @include input-minibox();
+      }
+      
+      #address_posting_first_name_f {
+        @include input-minibox();
+      }
+      
+      #address_postal_code {
+        @include input-box();
+      }
+      
+      #address_prefecture_id {
+        height: 48px;
+        margin: 10px 0 20px;
+      }
+      
+      #address_city {
+        @include input-box();
+      }
+      
+      #address_address {
+        @include input-box();
+      }
+      
+      #address_building {
+        @include input-box();
+      }
+      
+      #address_telephone {
+        @include input-box();
+      }
+
+      .form-require {
+        font: 66.66667% sans-serif;
+        color: #ffffff;
+        background-color: #EA352D;
+        margin: 0 0 2px 8px;
+        padding: 2px 4px;
+      }
+    }
   }
 }
 
-.form-require {
-  font: 66.66667% sans-serif;
-  color: #ffffff;
-  background-color: #EA352D;
-  margin: 0 0 2px 8px;
-  padding: 2px 4px;
+.signup-main-last {
+  display: block;
+  width: max-content;
+  margin: 0 auto;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 40px 5px;
+  height: 300px;
+  text-align: center;
+  line-height: 4;
+
+  a {
+    text-decoration: none;
+    color: #3CCACE;
+  }
 }
 
-#address_posting_family_name {
-  margin-right: 5px;
-  @include input-minibox();
-}
 
-#address_posting_first_name {
-  @include input-minibox();
-}
 
-#address_posting_family_name_f {
-  margin-right: 5px;
-  @include input-minibox();
-}
-
-#address_posting_first_name_f {
-  @include input-minibox();
-}
-
-#address_postal_code {
-  @include input-box();
-}
-
-#address_prefecture_id {
-  height: 48px;
-  margin: 10px 0 20px;
-}
-
-#address_city {
-  @include input-box();
-}
-
-#address_address {
-  @include input-box();
-}
-
-#address_building {
-  @include input-box();
-}
-
-#address_telephone {
-  @include input-box();
-}

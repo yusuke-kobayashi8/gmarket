@@ -3,20 +3,20 @@
     %h1.signup-header__box1
       %a(href="#" )
         = image_tag 'logo.png', size: '185x49'
-    %nav.progress-bar.signup-bar
-      %ol.clearfix
-        %li.active
-          会員情報
-          .progress-status
-            -# after
-        %li
-          商品送付先住所
-          .progress-status
-            -# before
-            -# after
-        %li
-          完了
-          .progress-status
+    -# %nav.progress-bar.signup-bar
+    -#   %ol.clearfix
+    -#     %li.active
+    -#       会員情報
+    -#       .progress-status
+    -#         -# after
+    -#     %li
+    -#       商品送付先住所
+    -#       .progress-status
+    -#         -# before
+    -#         -# after
+    -#     %li
+    -#       完了
+    -#       .progress-status
 
   %main.signup-main
     .signup-main__box
@@ -68,9 +68,14 @@
           = f.label :電話番号（任意）
           %br/
           = f.text_field :telephone, autocomplete: "telephone", placeholder: "例）080-xxxx-xxxx"
-        .text-box
-          %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
         .actions
           = f.submit "登録する", class: 'submit-btn'
+        .text-box
+          %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+        %p.form-text-right
+          %a(href="#")
+            電話番号の確認が必要な理由
+            %i.fas.fa-angle-right
+        
   .footer
     =render '/products/footer'

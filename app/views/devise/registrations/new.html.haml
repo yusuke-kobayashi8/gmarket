@@ -3,21 +3,21 @@
     %h1.signup-header__box1
       %a(href="#" )
         = image_tag 'logo.png', size: '185x49'
-    %nav.progress-bar.signup-bar
-      %ol.clearfix
-        %li.active
-          会員情報
-          .progress-status
-            -# after
-        %li
-          商品送付先住所
-          .progress-status
-            -# before
-            -# after
-        %li
-          完了
-          .progress-status
-            -# before
+    -# %nav.progress-bar.signup-bar
+    -#   %ol.clearfix
+    -#     %li.active
+    -#       会員情報
+    -#       .progress-status
+    -#         -# after
+    -#     %li
+    -#       商品送付先住所
+    -#       .progress-status
+    -#         -# before
+    -#         -# after
+    -#     %li
+    -#       完了
+    -#       .progress-status
+    -#         -# before
   %main.signup-main
     .signup-main__box
       %h2.signup-main__box__top 会員情報入力
@@ -71,8 +71,20 @@
           %span.form-require 必須
           %br/
           = f.date_select :birthday, use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1)
+        %p.form-info-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        %p.form-text
+          「次へ進む」のボタンを押すことにより、
+          %a(href="#")
+            利用規約
+          に同意したものとみなします
         .actions
           = f.submit "次へ進む", class: 'submit-btn'
+        %p.form-text-right
+          %a(href="#")
+            本人情報の登録について
+            %i.fas.fa-angle-right
+        %p.form-bottom-text This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+          
 
   .footer
     =render '/products/footer'

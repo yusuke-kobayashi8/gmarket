@@ -7,7 +7,7 @@
   background: #fff;
   line-height: 1.5;
   font-size: 16px;
-  margin: 10px 0 20px;
+  margin: 10px 0 40px;
 }
 
 @mixin input-minibox() {
@@ -19,8 +19,7 @@
   background: #fff;
   line-height: 1.5;
   font-size: 16px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 @mixin birthday-box() {
@@ -33,6 +32,6 @@
     background: 0;
     font-size: 16px;
     line-height: 1.5;
-    margin: 10px 10px 20px 0;
+    margin: 10px 10px 10px 0;
     cursor: pointer;
 }
