@@ -297,74 +297,190 @@
   }
 }
 
-.signup-header {
-  height: 128px;
-  text-align: center;
+.signup-container {
+  height: 100%;
   width: 100vw;
-}
+  background-color: #EEEEEE;
+  
 
-.signup-main{
-  display: block;
-  width: max-content;
-  margin: 0 auto;
-  align-items: center;
-
-  .signup {
+  .signup-header {
+    height: 128px;
     text-align: center;
-  }
-
-  #user_nickname {
-    @include input-box();
-  }
-
-  #user_email {
-    @include input-box();
-  }
-
-  #user_password {
-    @include input-box();
-  }
-
-  #user_password_confirmation {
-    @include input-box();
-  }
-
-  .fullname{
+    max-width: inherit;
+    font-size: inherit;
     display: flex;
 
-    #user_first_name {
-      @include input-minibox();
+    &__box1 {
+      margin: 40px 0 0 400px;
     }
 
-    #user_family_name {
-      margin-right: 5px;
-      @include input-minibox();
+    .progress-bar {
+      display: flex;
+      display: inline-block;
+      vertical-align: top;
+      padding: 40px 0 0 44px;
+
+      .clearfix {
+        display: flex;
+
+        li {
+          margin-right: 40px;
+        }
+      }
     }
   }
-  .fullname-kana {
-    display: flex;
+  .signup-main{
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px 5px;
 
-    #user_first_name_kana {
-      @include input-minibox();
+    &__box {
+      margin: 0 150px;
+
+      &__top {
+        font-size: 22px;
+        padding: 32px;
+        text-align: center;
+        border-bottom: 1px solid #f5f5f5;
+      }
     }
+      .signup {
+        text-align: center;
+      }
 
-    #user_family_name_kana {
-      margin-right: 5px;
-      @include input-minibox();
-    }
+      #user_nickname {
+        @include input-box();
+      }
+
+      #user_email {
+        @include input-box();
+      }
+
+      #user_password {
+        @include input-box();
+      }
+
+      #user_password_confirmation {
+        @include input-box();
+      }
+
+      .text-box {
+        margin-top: 10px;
+        height: 87px;
+        width: 375px;
+
+        p {
+          width: 375px;
+          margin-top: 5px;
+          word-wrap: normal;
+          font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+        }
+      }
+
+      .fullname{
+        display: flex;
+
+        #user_first_name {
+          @include input-minibox();
+        }
+
+        #user_family_name {
+          margin-right: 5px;
+          @include input-minibox();
+        }
+      }
+      .fullname-kana {
+        display: flex;
+
+        #user_first_name_kana {
+          @include input-minibox();
+        }
+
+        #user_family_name_kana {
+          margin-right: 5px;
+          @include input-minibox();
+        }
+      }
+
+      #user_birthday_1i {
+        @include birthday-box();
+      }
+
+      #user_birthday_2i {
+        @include birthday-box();
+      }
+
+      #user_birthday_3i {
+        @include birthday-box();
+      }
+
+      .submit-btn {
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        background-color: #66FFFF;
+        margin: 20px 0 0 0;
+      }     
+
   }
-
-  #user_birthday_1i {
-    @include birthday-box();
-  }
-
-  #user_birthday_2i {
-    @include birthday-box();
-  }
-
-  #user_birthday_3i {
-    @include birthday-box();
-  }
-
 }
 
+.form-require {
+  font: 66.66667% sans-serif;
+  color: #ffffff;
+  background-color: #EA352D;
+  margin: 0 0 2px 8px;
+  padding: 2px 4px;
+}
+
+#address_posting_family_name {
+  margin-right: 5px;
+  @include input-minibox();
+}
+
+#address_posting_first_name {
+  @include input-minibox();
+}
+
+#address_posting_family_name_f {
+  margin-right: 5px;
+  @include input-minibox();
+}
+
+#address_posting_first_name_f {
+  @include input-minibox();
+}
+
+#address_postal_code {
+  @include input-box();
+}
+
+#address_prefecture_id {
+  height: 48px;
+  margin: 10px 0 20px;
+}
+
+#address_city {
+  @include input-box();
+}
+
+#address_address {
+  @include input-box();
+}
+
+#address_building {
+  @include input-box();
+}
+
+#address_telephone {
+  @include input-box();
+}
