@@ -21,7 +21,7 @@ ladies_grandchild_array = [
                             ['トップス','アウター','インナー','ワンピース','パンツ/スパッツ','スカート','パジャマ','授乳服','その他'], 
                             ['コスプレ','下着','その他']
                           ]
-parent = Categorie.create(name: 'レディース')
+parent = Category.create(name: 'レディース')
 ladies_child_array.each_with_index do |child, i|
   child = parent.children.create(name: child)
   ladies_grandchild_array[i].each do |grandchild|
@@ -47,7 +47,7 @@ mens_grandchild_array = [
                             ['トランクス','ボクサーパンツ','その他'], 
                             ['その他'], 
                           ]
-parent = Categorie.create(name: 'メンズ')
+parent = Category.create(name: 'メンズ')
 mens_child_array.each_with_index do |child, i|
   child = parent.children.create(name: child)
   mens_grandchild_array[i].each do |grandchild|
@@ -74,7 +74,7 @@ kids_grandchild_array = [
                             ['お宮参り用品','お食い初め用品','アルバム','手形/足形','その他'], 
                             ['母子手帳用品','その他'], 
                           ]
-parent = Categorie.create(name: 'ベビー・キッズ')
+parent = Category.create(name: 'ベビー・キッズ')
 kids_child_array.each_with_index do |child, i|
   child = parent.children.create(name: child)
   kids_grandchild_array[i].each do |grandchild|
@@ -99,7 +99,7 @@ interiors_grandchild_array = [
                             ['正月','成人式','バレンタインデー','ひな祭り','子供の日','母の日','父の日','サマーギフト/お中元','夏/夏休み','ハロウィン','敬老の日','七五三','お歳暮','クリスマス','冬一般','その他'], 
                             ['その他'],
                           ]
-parent = Categorie.create(name: 'インテリア・住まい・小物')
+parent = Category.create(name: 'インテリア・住まい・小物')
 interiors_child_array.each_with_index do |child, i|
   child = parent.children.create(name: child)
   interiors_grandchild_array[i].each do |grandchild|
@@ -118,7 +118,7 @@ books_grandchild_array = [
                             ['邦楽','洋楽','その他'], 
                             ['家庭用ゲーム本体','家庭用ゲームソフト','携帯用ゲーム本体','携帯用ゲームソフト','PCゲーム','その他'], 
                           ]
-parent = Categorie.create(name: '本・音楽・ゲーム')
+parent = Category.create(name: '本・音楽・ゲーム')
 books_child_array.each_with_index do |child, i|
   child = parent.children.create(name: child)
   books_grandchild_array[i].each do |grandchild|
@@ -141,7 +141,7 @@ toys_grandchild_array = [
                             ['画材','額縁','その他'], 
                             ['トランプ/UNO','カルタ/百人一首','ダーツ','ビリヤード','麻雀','パズル/ジグソーパズル','囲碁/将棋','オセロ/チェス','人生ゲーム','野球/サッカー','スポーツ','三輪車/乗り物','ヨーヨー','模型製作用品','鉄道','航空機','アマチュア無線','パチンコ/パチスロ','その他'], 
                           ]
-parent = Categorie.create(name: 'おもちゃ・ホビー・グッズ')
+parent = Category.create(name: 'おもちゃ・ホビー・グッズ')
 toys_child_array.each_with_index do |child, i|
   child = parent.children.create(name: child)
   toys_grandchild_array[i].each do |grandchild|
@@ -164,7 +164,7 @@ beauty_grandchild_array = [
                             ['ダイエット食品','エクササイズ用品','体重計','体脂肪計','その他'], 
                             ['健康用品','看護/介護用品','救急/衛生用品','その他'], 
                           ]
-parent = Categorie.create(name: 'コスメ・香水・美容')
+parent = Category.create(name: 'コスメ・香水・美容')
 beauty_child_array.each_with_index do |child, i|
   child = parent.children.create(name: child)
   beauty_grandchild_array[i].each do |grandchild|
@@ -186,7 +186,7 @@ electric_grandchild_array = [
                             ['冷蔵庫','洗濯機','炊飯器','電子レンジ/オーブン','調理機器','アイロン','掃除機','エスプレッソマシン','コーヒーメーカー','衣類乾燥機','その他'], 
                             ['その他'], 
                           ]
-parent = Categorie.create(name: '家電・スマホ・カメラ')
+parent = Category.create(name: '家電・スマホ・カメラ')
 electric_child_array.each_with_index do |child, i|
   child = parent.children.create(name: child)
   electric_grandchild_array[i].each do |grandchild|
@@ -210,7 +210,7 @@ sports_grandchild_array = [
                             ['テント/タープ','ライト/ランタン','寝袋/寝具','テーブル/チェア','ストーブ/コンロ','調理器具','食器','登山用品','その他'], 
                             ['旅行用品','その他'], 
                           ]
-parent = Categorie.create(name: 'スポーツレジャー')
+parent = Category.create(name: 'スポーツレジャー')
 sports_child_array.each_with_index do |child, i|
   child = parent.children.create(name: child)
   sports_grandchild_array[i].each do |grandchild|
@@ -231,7 +231,7 @@ hand_grandchild_array = [
                             ['Ingress','クリエイターズ宇宙兄弟','シンデレラガールCPグッズ'], 
                             ['その他'], 
                           ]
-parent = Categorie.create(name: 'ハンドメイド')
+parent = Category.create(name: 'ハンドメイド')
 hand_child_array.each_with_index do |child, i|
   child = parent.children.create(name: child)
   hand_grandchild_array[i].each do |grandchild|
@@ -251,7 +251,7 @@ tickets_grandchild_array = [
                             ['ショッピング','レストラン/食事券','フード/ドリンク券','宿泊券','その他'], 
                             ['その他'],
                           ]
-parent = Categorie.create(name: 'チケット')
+parent = Category.create(name: 'チケット')
 tickets_child_array.each_with_index do |child, i|
   child = parent.children.create(name: child)
   tickets_grandchild_array[i].each do |grandchild|
@@ -270,7 +270,7 @@ cars_grandchild_array = [
                             ['タイヤ','マフラー','エンジン、冷却装置','カウル、フェンダー、外装','サスペンション','ホイール','シート','ブレーキ','タンク','ライト、ウィンカー','チェーン、スプロケット、駆動系','メーター','電装系','ミラー','外国オートバイ用パーツ','その他'], 
                             ['ヘルメット/シールド','バイクウエア/装備','アクセサリー','メンテナンス','カタログ/マニュアル','その他'], 
                           ]
-parent = Categorie.create(name: '自動車・オートバイ')
+parent = Category.create(name: '自動車・オートバイ')
 cars_child_array.each_with_index do |child, i|
   child = parent.children.create(name: child)
   cars_grandchild_array[i].each do |grandchild|
@@ -290,7 +290,7 @@ others_grandchild_array = [
                             ['オフィス用品一般','オフィス家具','店舗用品','OA機器','ラッピング/包装','その他'],
                             ['その他'], 
                           ]
-parent = Categorie.create(name: 'その他')
+parent = Category.create(name: 'その他')
 others_child_array.each_with_index do |child, i|
   child = parent.children.create(name: child)
   others_grandchild_array[i].each do |grandchild|
