@@ -3,6 +3,8 @@ class Product < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :brand, optional: true
   belongs_to :category, optional: true
+
+ 
   
   belongs_to_active_hash :status
   belongs_to_active_hash :prefecture
@@ -17,5 +19,4 @@ class Product < ApplicationRecord
   validates_associated :images
   validates :images, presence: true
   validates :name, :price, :status_id, :delivery_cost_id, :days_to_ship_id, :prefecture_id, presence: true
-  # validates :name, :price, :detail, :status_id, :delivery_cost_id, :days_to_ship_id, :prefecture_id, presence: true
 end
