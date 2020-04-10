@@ -1,8 +1,6 @@
 .signup-container
-  .signup-header
-    %h1.signup-header__box1
-      %a(href="#" )
-        = image_tag 'logo.png', size: '185x49'
+  = render 'signup-header'
+
   %main.signup-main-last
     .signup-main__box
       %h2.signup-main__box__top 登録が完了しました
