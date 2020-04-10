@@ -1,0 +1,64 @@
+.signup-container
+  = render 'signup-header'
+
+  %main.signup-main
+    .signup-main__box
+      %h2.signup-main__box__top 商品送付先住所
+      .signup-main__contents
+      = form_for @address do |f|
+        -# = render "devise/shared/error_messages", resource: @address
+        = f.label :送付先氏名
+        %span.form-require 必須
+        %br/
+        .fullname
+          .field
+            = f.text_field :posting_family_name, autofocus: true, autocomplete: "posting_family_name", placeholder: "名字"
+          .field       
+            = f.text_field :posting_first_name, autocomplete: "posting_first_name", placeholder: "名前"
+        = f.label :送付先氏名（フリガナ）
+        %span.form-require 必須
+        %br/
+        .fullname
+          .field
+            = f.text_field :posting_family_name_f, autocomplete: "posting_family_name_f", placeholder: "名字（カナ）"
+          .field      
+            = f.text_field :posting_first_name_f, autocomplete: "posting_first_name_f", placeholder: "名前（カナ）"
+        .field
+          = f.label :郵便番号
+          %span.form-require 必須
+          %br/
+          = f.text_field :postal_code, autocomplete: "postal_code", placeholder: "例）123-4567"
+        .field
+          = f.label :都道府県
+          %span.form-require 必須
+          %br/
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: "選択してください"
+          .field
+          = f.label :市区町村
+          %span.form-require 必須
+          %br/
+          = f.text_field :city, autocomplete: "city", placeholder: "例）横浜市緑区"
+        .field
+          = f.label :番地
+          %span.form-require 必須
+          %br/
+          = f.text_field :address, autocomplete: "address", placeholder: "例）青山1-1-1"
+        .field
+          = f.label :建物名（任意）
+          %br/
+          = f.text_field :building, autocomplete: "building", placeholder: "例）柳ビル 103"
+        .field
+          = f.label :電話番号（任意）
+          %br/
+          = f.text_field :telephone, autocomplete: "telephone", placeholder: "例）080-xxxx-xxxx"
+        .actions
+          = f.submit "登録する", class: 'submit-btn'
+        .text-box
+          %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+        %p.form-text-right
+          = link_to("#") do
+            電話番号の確認が必要な理由
+            %i.fas.fa-angle-right
+        
+  .footer
+    =render '/products/footer'
