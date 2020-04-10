@@ -1,0 +1,67 @@
+.footer {
+  height: 355px;
+  padding: 60px 0;
+  color: $f;
+  background-color: #272727;
+  text-align: center;
+  &__contents {
+    margin: 0 auto;
+    display: flex;
+    width: 840px;
+
+    &__list {
+      width: 30%;
+      margin-right: 30px;
+      &__head {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      ul {
+        list-style: none;
+        li {
+          a{
+            color:$f;
+            text-decoration: none;
+            font-size: 12px;
+            line-height: 32px;
+            padding-bottom: 1px;
+          }
+        }
+          a:hover {
+            opacity: 0.5 ;
+          }
+      }
+    }
+  }
+  &__logo {
+    margin: 0 auto;
+    width: 840px;
+  }
+    p {
+      font-size: 15px;
+    }
+  
+
+    .sell__btn {
+      width: 120px;
+      background: $s;
+      text-align: center;
+      border-radius: 4%;
+      bottom: 32px;
+      right: 32px;
+      position: fixed;
+      padding: 15px;
+      &__text {
+        color: $f;
+        display: block;
+        font-size: 18px;
+        text-decoration: none;
+        margin-bottom: 5px;
+      }
+    }
+}
+.all__footer {
+  height: 355px;
+  background-color: black;
+  }

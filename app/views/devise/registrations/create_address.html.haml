@@ -1,2 +1,10 @@
-%h2 登録が完了しました
-= link_to "トップへ戻る", root_path
+.signup-container
+  = render 'signup-header'
+
+  %main.signup-main-last
+    .signup-main__box
+      %h2.signup-main__box__top 登録が完了しました
+      .signup-main__contents    
+    = link_to "トップへ戻る", root_path, class: "signup-main-last__back"
+  .footer
+    =render '/products/footer'
