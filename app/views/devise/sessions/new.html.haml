@@ -1,0 +1,27 @@
+.signup-container
+  .signup-header
+    %h1.signup-header__box1
+      = link_to("#") do
+        = image_tag 'logo.png', size: '185x49'
+  %main.signup-main
+    .signup-main__box
+      %h2.signup-main__box__top ログイン情報
+      .signup-main__contents
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "新規登録時のEメール"
+        .field
+          = f.label :password
+          %br/
+          = f.password_field :password, autocomplete: "current-password", placeholder: "７文字以上の半角英数字"
+        - if devise_mapping.rememberable?
+          .field-check
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions
+          = f.submit "ログインする", class: 'submit-btn'
+        -# = render "devise/shared/links"
+  .footer
+    =render '/products/footer'

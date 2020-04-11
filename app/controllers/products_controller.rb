@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.includes(:images).order('created_at DESC')
+    @parents = Category.all.order("id ASC").limit(13)
+    @category_parent = Category.where(ancestry: nil)
   end
 
   def new
@@ -16,6 +18,22 @@ class ProductsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @product = Product.find(params[:id])
+    @images = @product.images
+    @image = @images.first
+  end
+
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
 
   private
 
