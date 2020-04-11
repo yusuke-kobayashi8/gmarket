@@ -2,48 +2,42 @@
   = link_to "/mypage/my_page", class: "main__left-contents__navi-items" do
     マイページ
     = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
-  .main__left-contents__navi-items
-    出品する
+  = link_to "/products/new", class: "main__left-contents__navi-items" do
+    出品する 
     = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
-  .main__left-contents__navi-items
-    下書き一覧
-    = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
-  .main__left-contents__navi-items
+  = link_to "/mypage/my_page_exhibition", class: "main__left-contents__navi-items" do
     出品した商品-出品中
     = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
-  .main__left-contents__navi-items
+  = link_to "/mypage/my_page_exhibiting", class: "main__left-contents__navi-items" do
     出品した商品-取引中
     = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
-  .main__left-contents__navi-items
+  = link_to "/mypage/my_page_sold", class: "main__left-contents__navi-items" do
     出品した商品-売却済
     = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
-  .main__left-contents__navi-items
+  = link_to "/mypage/my_page_transaction", class: "main__left-contents__navi-items" do
     購入した商品-取引中
     = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
-  .main__left-contents__navi-items
+  = link_to "/mypage/my_page_transactiond", class: "main__left-contents__navi-items" do
     購入した商品-過去の取引
     = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
-  .main__left-contents__navi-items
+  = link_to "#", class: "main__left-contents__navi-items" do
     ガイド
-    = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
-  .main__left-contents__navi-items
-    お知らせ
     = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
   .main__left-contents__h3
     設定
-  .main__left-contents__navi-items
+  = link_to "#", class: "main__left-contents__navi-items" do
     プロフィール
     = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
-  .main__left-contents__navi-items
+  = link_to "#", class: "main__left-contents__navi-items" do
     発送元・お届け先住所変更
     = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
-  = link_to creditcards_path, class: "main__left-contents__navi-items" do
+  = link_to new_creditcard_path, class: "main__left-contents__navi-items" do
     支払い方法
     = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
-  .main__left-contents__navi-items
+  = link_to "#", class: "main__left-contents__navi-items" do
     メール/パスワード
     = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
-  .main__left-contents__navi-items
+  = link_to "#", class: "main__left-contents__navi-items" do
     本人情報
     = image_tag "dicon.png", size: "9x15", class:"main__left-contents__navi-items--aa--icon"
   = link_to "/mypage/my_page_logout", class: "main__left-contents__navi-items" do

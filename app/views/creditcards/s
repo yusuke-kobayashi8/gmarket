@@ -3,7 +3,8 @@
     クレジットカード情報の入力
   .credit-card
     .credit-card__content
-      = form_tag(card_index_path, method: :post, id: 'charge-form',  name: "inputForm", maxlength: "16") do
+      -#= form_tag( method: :post, id: 'charge-form',  name: "inputForm", maxlength: "16") do
+      = form_with url:creditcards_path, method: :post, html: { name: "inputForm" } do |f|
         %label.credit-card__content__label カード番号
         %span.credit-card__content__required 必須
         = text_field_tag "number", "", class: "credit-card__content__number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
@@ -50,5 +51,46 @@
         %label.credit-card__content__label セキュリティコード
         %span.credit-card__content__required 必須
         = text_field_tag "cvc", "", class: "credit-card__content__number", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
-        #card_token
-        = submit_tag "追加する", id: "token_submit", class:"credit-card__content__add-button"
+        = f.submit "追加する", id: "charge-form", class:"credit-card__content__add-button"
+
+$(document).on('turbolinks:load',function(){
+  // PAY.JPの公開鍵をセットします。
+  Payjp.setPublicKey('pk_test_20718938b62362d65002fe45');
+
+  //formのsubmitを止めるために, クレジットカード登録のformを定義します。
+  var form = $(".form");
+
+  $("#charge-form").click(function() {
+    // submitが完了する前に、formを止めます。
+    form.find("input[type=submit]").prop("disabled", true);
+    // submitを止められたので、PAY.JPの登録に必要な処理をします。
+
+    // formで入力された、カード情報を取得します。
+    var card = {
+      number: $("#card_number").val(),
+      cvc: $("#cvc").val(),
+      exp_month: $("#exp_month").val(),
+      exp_year: $("#exp_year").val(),
+    };
+
+    // PAYJPに登録するためのトークン作成
+    Payjp.createToken(card, function(status, response) {
+      if (response.error){
+        // エラーがある場合処理しない。
+        form.find('.payment-errors').text(response.error.message);
+        form.find('button').prop('disabled', false);
+      }   
+      else {
+        // エラーなく問題なく進めた場合
+        // formで取得したカード情報を削除して、Appにカード情報を残さない。
+        $("#card_number").removeAttr("name");
+        $("#cvc").removeAttr("name");
+        $("#exp_month").removeAttr("name");
+        $("#exp_year").removeAttr("name");
+        var token = response.id;
+        form.append($('<input type="hidden" name="payjpToken" />').val(token));
+        form.get(0).submit();
+      };
+    });
+  });
+});

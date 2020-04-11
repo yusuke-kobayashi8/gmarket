@@ -1,4 +1,4 @@
-class CreditCardsController < ApplicationController
+class CreditcardsController < ApplicationController
 
   require "payjp"
   before_action :set_card
@@ -62,7 +62,7 @@ class CreditCardsController < ApplicationController
       )
 
       # PAY.JPのユーザーが作成できたので、creditcardモデルを登録します。
-      @card = Creditcard.new(user_id: current_user.id, payjp_id: customer.id)
+      @card = Creditcard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
         redirect_to action: "index", notice:"支払い情報の登録が完了しました"
       else
@@ -71,23 +71,8 @@ class CreditCardsController < ApplicationController
     end
   end
 
-  def destroy     
-    # 今回はクレジットカードを削除するだけでなく、PAY.JPの顧客情報も削除する。これによりcreateメソッドが複雑にならない。
-    # PAY.JPの秘密鍵をセットして、PAY.JPから情報をする。
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    # PAY.JPの顧客情報を取得
-    customer = Payjp::Customer.retrieve(@card.payjp_id)
-    customer.delete # PAY.JPの顧客情報を削除
-    if @card.destroy # App上でもクレジットカードを削除
-      redirect_to action: "index", notice: "削除しました"
-    else
-      redirect_to action: "index", alert: "削除できませんでした"
-    end
-  end
-
   private
   def set_card
     @card = Creditcard.where(user_id: current_user.id).first if Creditcard.where(user_id: current_user.id).present?
   end
-
 end

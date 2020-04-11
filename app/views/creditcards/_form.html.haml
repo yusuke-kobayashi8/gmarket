@@ -1,0 +1,31 @@
+.main__right-contents
+  .credit-head
+    クレジットカード情報の入力
+  .credit-card
+    .credit-card__content
+      = form_with url:creditcards_path, method: :post, html: { name: "inputForm" },class:"form" do |f|
+        %label.credit-card__content__label カード番号
+        %span.credit-card__content__required 必須
+        -#= text_field_tag "number", "", class: "credit-card__content__number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+        = f.text_field :card_number, name: "card_number", id:"card_number", type: "text", placeholder: '半角数字のみ', class: 'credit-card__content__number', maxlength: "16"
+        .credit-card__content__card-list
+          = image_tag "visa.svg", size: "49x20"
+          = image_tag "master-card.svg", size: "34x20"
+          = image_tag "saison-card.svg", size: "30x20"
+          = image_tag "jcb.svg", size: "32x20"
+          = image_tag "american_express.svg", size: "21x20"
+          = image_tag "dinersclub.svg", size: "32x20"
+          = image_tag "discover.svg", size: "32x20"
+        %br
+        %label.credit-card__content__label 有効期限
+        %span.credit-card__content__required 必須
+        = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{}, class: 'exp', name: "exp_month", id:"exp_month"
+        %span.credit-card__content__date 月
+        = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029],["30",2030]], {}, class: "exp", name: "exp_year", id:"exp_year"
+        %span.credit-card__content__date 年
+        %br
+        %br
+        %label.credit-card__content__label セキュリティコード
+        %span.credit-card__content__required 必須
+        = text_field_tag "cvc", "", class: "credit-card__content__number", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+        = f.submit "追加する", id: "charge-form", class:"credit-card__content__add-button"

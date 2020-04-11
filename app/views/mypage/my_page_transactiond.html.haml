@@ -1,0 +1,16 @@
+.wallpaper
+  .main
+    .main__right-contents
+      .main__right-contents__products-head
+        購入した商品
+      .main__right-contents__tabs
+        .main__right-contents__tabs
+          = link_to "/mypage/my_page_transaction", class: "main__right-contents__tabs__n" do
+            取引中
+          .main__right-contents__tabs__a
+            過去の取引
+      .main__right-contents__content
+        %ul
+          %li.main__right-contents__content__not 
+            取引中の商品がありません
+    = render "side_ber"
