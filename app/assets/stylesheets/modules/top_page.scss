@@ -207,6 +207,8 @@ $s: #3CCACE;
     .app__dl__imag {
       height: 400px;
       width: 100vw;
+      object-fit: cover;
+      object-position: right bottom;
     }
     &__contents {
       margin-left: 150px ;
@@ -301,6 +303,7 @@ $s: #3CCACE;
     .appBanner__imag {
       height: 370px;
       width: 100vw;
+      object-fit: cover;
     }
     &__contents {
       position: absolute;
