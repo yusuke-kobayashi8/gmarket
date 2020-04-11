@@ -301,6 +301,7 @@ $s: #3CCACE;
     .appBanner__imag {
       height: 370px;
       width: 100vw;
+      object-fit: cover;
     }
     &__contents {
       position: absolute;
