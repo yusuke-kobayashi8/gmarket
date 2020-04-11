@@ -125,10 +125,3 @@
   -# 以下動作確認用の仮置きのビューです
   = link_to new_product_path do
     出品
-- @category_parent.each do |parent|
-  =parent.name
-  - parent.children.each do |child|
-    =child.name 
-    - child.children.each do |grandchild|
-      = link_to('#', {}) do
-        =grandchild.name
