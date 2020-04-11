@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.includes(:images).order('created_at DESC')
+    @parents = Category.all.order("id ASC").limit(13)
+    @category_parent = Category.where(ancestry: nil)
   end
 
   def new
