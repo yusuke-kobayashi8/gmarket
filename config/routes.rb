@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'mypage#my_page'
-  #root 'mypage#new'
 
   resources :mypage do
     collection do
@@ -20,12 +19,10 @@ Rails.application.routes.draw do
   resources :products, only: [:new, :create]
 
   resources :creditcards, only: [:index, :new, :create, :destroy] do
-    collection do
+    #collection do
       #post 'new', to: 'creditcards#new'
       #post 'index', to: 'creditcards#index'
       #post 'delete', to: 'creditcards#delete'
-      get :new
-      get :index
-    end
+    #end
   end
 end
