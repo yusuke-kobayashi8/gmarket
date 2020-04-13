@@ -8,6 +8,18 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+    @category_parents = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parents << parent
+    end
+  end
+
+  def category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def category_grandchildren
+    
   end
 
   def create
