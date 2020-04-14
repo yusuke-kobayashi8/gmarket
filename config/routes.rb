@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       get :my_page_exhibition
       get :my_page_exhibiting
       get :my_page_sold
-      get :new
     end
   end
 end
