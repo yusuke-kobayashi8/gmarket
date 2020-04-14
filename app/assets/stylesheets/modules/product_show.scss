@@ -1,0 +1,27 @@
+.puroduct__show {
+  background: #f8f8f8;
+  &__main {
+    padding: 40px;
+    margin: 0 auto;
+    &__item {
+      width: 700px;
+      margin: 0 auto;
+      &__name {
+        text-align: center;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      &__phots {
+        margin-top: 20px;
+        &__top {
+          margin: 0 auto;
+          width: 100%;
+          .top__imag {
+            height: 346px;
+            width: 560px;
+          }
+        }
+      }
+    }
+  }
+}
