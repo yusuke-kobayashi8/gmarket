@@ -28,7 +28,7 @@ class CreditcardsController < ApplicationController
   end
 
   def new 
-    card = Creditcard.where(user_id: current_user.id).first
+    card = Creditcard.find_by(user_id: current_user.id)
     redirect_to action: "index" if card.present?
   end
 

@@ -1,18 +1,18 @@
 .wallpaper
-  .main
-    .main__right-contents
-      .main__right-contents__products-head
+  .main2
+    .main2__right-contents
+      .main2__right-contents__products-head
         出品した商品
-      .main__right-contents__tabs
-        .main__right-contents__tabs
-          .main__right-contents__tabs__a1
+      .main2__right-contents__tabs
+        .main2__right-contents__tabs
+          .main2__right-contents__tabs__a1
             出品中
-          = link_to "/mypage/my_page_exhibiting", class: "main__right-contents__tabs__n1" do
+          = link_to "/mypage/my_page_exhibiting", class: "main2__right-contents__tabs__n1" do
             取引中
-          = link_to "/mypage/my_page_sold", class: "main__right-contents__tabs__n1" do
+          = link_to "/mypage/my_page_sold", class: "main2__right-contents__tabs__n1" do
             売却済
-      .main__right-contents__content
+      .main2__right-contents__content
         %ul
-          %li.main__right-contents__content__not 
+          %li.main2__right-contents__content__not 
             出品中の商品がありません
     = render "side_ber"
