@@ -1,6 +1,6 @@
 -# 動作確認用の仮置きのビューです
 
-= form_for @product do |f|
+= form_with model: @product, local: true do |f|
   = f.text_field :name, placeholder: "name"
   = f.number_field :price, placeholder: "price"
   = f.collection_select :status_id, Status.all, :id, :name, include_blank: "選択してください"
@@ -8,7 +8,7 @@
   = f.collection_select :delivery_cost_id, DeliveryCost.all, :id, :name, include_blank: "選択してください"
   = f.collection_select :days_to_ship_id, DaysToShip.all, :id, :name, include_blank: "選択してください"
   = f.fields_for :images do |i|
-    = i.file_field :image
+    = i.file_field :image 
   = f.fields_for :images do |i|
     = i.file_field :image
   = f.submit

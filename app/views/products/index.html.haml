@@ -1,8 +1,9 @@
 .warappr
   .header
+    =render 'header'
   .main
     .main__visual
-      = image_tag 'bg-mainVisual-pict_pc.jpg', size:'1280x560'
+      = image_tag 'bg-mainVisual-pict_pc.jpg', class: "visual__imag"
       .main__visual__content
         .main__visual__content__info
           .main__visual__content__subtitle
@@ -52,7 +53,7 @@
           .main__explain__list__3__text__dateil
             %p 最大3%でお得に出品＆購入！
     .main__app__dl
-      = image_tag 'bg-topMiddleDl-pict.jpg', size:'1280x400'
+      = image_tag 'bg-topMiddleDl-pict.jpg', class: "app__dl__imag"
       .main__app__dl__contents
         .main__app__dl__contents__subtitle
           %a 会員数日本一位
@@ -97,7 +98,7 @@
     .main__pickup
       = render 'puroductsbrand'
     .main__appBanner
-      = image_tag 'bg-appBanner-pict.jpg', size:'1280x370'
+      = image_tag 'bg-appBanner-pict.jpg', class: "appBanner__imag"
       .main__appBanner__contents
         .main__appBanner__contents__info 
           .main__appBanner__contents__info__titl
@@ -113,16 +114,13 @@
                 = image_tag 'google-play-badge.png', size:'180x80'
   .footer
     =render 'footer'
-  = link_to('#', {}) do
+  = link_to new_product_path do
     .sell__btn
       .sell__btn__text
         %p 出品する
       .sell__btn__icon
         = image_tag 'icon_camera.png', size:'54x54'
-  
-  
+
   -# 以下動作確認用の仮置きのビューです
-  = link_to new_product_path do
-    出品
   .contener
     = render @products

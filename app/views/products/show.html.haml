@@ -1,0 +1,42 @@
+-# 詳細ページ確認用
+.hoge
+  %p 
+    = @product.name
+  %p 
+    = @product.price
+  %p 
+    = @product.detail
+  %p 
+    = @product.status.name
+  %p 
+    = @product.prefecture.name
+  %p
+    = @product.delivery_cost.name
+  %p
+    = @product.days_to_ship.name
+  %p
+    = link_to('＃') do
+      = @product.category.parent.parent.name
+  %p
+    = link_to('＃') do
+      = @product.category.parent.name
+  %p
+    = link_to('＃') do
+      = @product.category.name
+  %p
+    - @product.images.each do |image|
+      = image_tag image.image.url
+      
+- if user_signed_in?
+  - if current_user.id == @product.user_id
+    .user_prodct_delete
+      = link_to "/products/#{@product.id}", method: :delete do
+        %p 商品の削除
+    .user_post_edit
+      = link_to edit_product_path(@product.id), method: :get do
+        %p 商品の編集
+  - else 
+    = link_to('＃') do
+      %p 商品の購入に進む
+- else 
+  %p ログインしてください

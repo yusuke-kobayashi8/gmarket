@@ -11,7 +11,10 @@ $s: #3CCACE;
     height: 560px;
     width: 100vw;
     position: relative;
-  
+    .visual__imag {
+      height: 560px;
+      width: 100vw;
+    }
     &__content {
       height: 560px;
       width: 100%;
@@ -201,6 +204,12 @@ $s: #3CCACE;
   &__app__dl {
     height: 400px;
     position: relative;
+    .app__dl__imag {
+      height: 400px;
+      width: 100vw;
+      object-fit: cover;
+      object-position: right bottom;
+    }
     &__contents {
       margin-left: 150px ;
       position: absolute;
@@ -291,6 +300,11 @@ $s: #3CCACE;
   &__appBanner {
     line-height:0;
     position: relative;
+    .appBanner__imag {
+      height: 370px;
+      width: 100vw;
+      object-fit: cover;
+    }
     &__contents {
       position: absolute;
       height: 100%;
