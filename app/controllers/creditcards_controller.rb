@@ -88,6 +88,7 @@ class CreditcardsController < ApplicationController
         redirect_to controller: 'products', action: 'index'
       end
     end
+  end
 
   private
 

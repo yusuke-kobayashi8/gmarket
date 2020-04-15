@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   
-  resources :products, only: [:new, :create, :show, :destroy, :edit]
+  resources :products, only: [:new, :create, :show, :destroy, :edit] do
+    member do
+      post 'buy', to: 'purchase#buy'
+    end
+  end
   resources :creditcards, only: [:index, :new, :create, :destroy]
   resources :mypage do
     collection do
