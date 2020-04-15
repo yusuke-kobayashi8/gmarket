@@ -93,10 +93,14 @@
       &__right__list {
         margin-left: auto;
         display: flex;
+        margin-top: 20px;
+        &__logout__user {
+          margin-left: 20px;
+          font-size: 13px;
+        }
 
         &__crrent__user {
-          padding-left: 30px;
-          line-height: 40px;        
+          padding-left: 30px;      
           font-size: 13px;
           text-decoration: none;
           color: black;
@@ -104,7 +108,6 @@
 
         &__new__user {
           padding-left: 30px;
-          line-height: 40px;
           font-size: 13px;
           text-decoration: none;
           color: black;

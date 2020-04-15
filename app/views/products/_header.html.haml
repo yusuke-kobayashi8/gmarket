@@ -13,15 +13,14 @@
   .header__under__main
     .header__under__main__left__list
       .header__under__main__left__list__category
-        = link_to('#', {}) do
-          カテゴリー
+        = link_to "カテゴリー", category_index_path,method: :get
       .header__under__main__left__list__brand
         = link_to('#', {}) do
           ブランド
     .header__under__main__right__list
       - if user_signed_in?
         %p マイページ
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__under__main__right__list__logout__user"
       - else
         = link_to "新規登録", new_user_registration_path, class: "header__under__main__right__list__new__user"
         = link_to "ログイン", new_user_session_path, class: "header__under__main__right__list__crrent__user"
