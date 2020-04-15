@@ -40,7 +40,7 @@
           .seller__main__content__box3__category__name1
           カテゴリー
           .seller__main__content__box3__category__name2 必須
-        .seller__main__content__box3__form1 
+        #category_form.seller__main__content__box3__form1 
           = f.collection_select :category, @category_parents, :id, :name, include_blank: "選択してください"
         .seller__main__content__box3__brand
           .seller__main__content__box3__brand__name1 ブランド
