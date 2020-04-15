@@ -1,50 +1,22 @@
 .main__pickup__content
   .main__pickup__content__categorie
     %a ピックアップブランド
+  .main__pickup__content__subtitle
+    %p アーカイバ
   .main__pickup__content__productlist
-    .main__pickup__content__productlist__new__title
-      = link_to('#', {}) do
-        %p アーカイバ
-    .main__pickup__content__productlist__new__items
-      .main__pickup__content__productlist__new__item
-        = link_to('#', {}) do
-          .main__pickup__content__productlist__new__item__pic
-            = image_tag 'beauty_1583238288662.JPG', size:'220x150'
-          .main__pickup__content__productlist__new__item__info
-            .main__pickup__content__productlist__new__item__info__name
-              %p product3
-            .main__pickup__content__productlist__new__item__info__detail 
-              .main__pickup__content__productlist__new__item__info__detail__price
-                %p 3000円
-              .main__pickup__content__productlist__new__item__info__detail__icon
-                -# = icon('fas', 'star',class: 'likeIcon')
-            .main__pickup__content__productlist__new__item__info__detail__price__tax
-              %p (税込み)
-      .main__pickup__content__productlist__new__item
-        = link_to('#', {}) do
-          .main__pickup__content__productlist__new__item__pic
-            = image_tag 'beauty_1583238288662.JPG', size:'220x150'
-          .main__pickup__content__productlist__new__item__info
-            .main__pickup__content__productlist__new__item__info__name
-              %p product3
-            .main__pickup__content__productlist__new__item__info__detail 
-              .main__pickup__content__productlist__new__item__info__detail__price
-                %p 3000円
-              .main__pickup__content__productlist__new__item__info__detail__icon
-                -# = icon('fas', 'star',class: 'likeIcon')
-            .main__pickup__content__productlist__new__item__info__detail__price__tax
-              %p (税込み)
-      .main__pickup__content__productlist__new__item
-        = link_to('#', {}) do
-          .main__pickup__content__productlist__new__item__pic
-            = image_tag 'beauty_1583238288662.JPG', size:'220x150'
-          .main__pickup__content__productlist__new__item__info
-            .main__pickup__content__productlist__new__item__info__name
-              %p product3
-            .main__pickup__content__productlist__new__item__info__detail 
-              .main__pickup__content__productlist__new__item__info__detail__price
-                %p 3000円
-              .main__pickup__content__productlist__new__item__info__detail__icon
-                -# = icon('fas', 'star',class: 'likeIcon')
-            .main__pickup__content__productlist__new__item__info__detail__price__tax
-              %p (税込み)
+    .main__pickup__content__productlist__newitem
+      - @product_unsold.last(3).each do |product|
+        .main__pickup__content__productlist__newitem__box
+          = link_to('#', {}) do
+            .main__pickup__content__productlist__newitem__box__pic
+              = image_tag product.images[0].image.url, size:'220x150'
+            .main__pickup__content__productlist__newitem__box__text
+              .main__pickup__content__productlist__newitem__box__text__name
+                = product.name
+              .main__pickup__content__productlist__newitem__box__text__price
+                = product.price 
+                円
+              .main__pickup__content__productlist__newitem__box__text__icon
+              -# = icon('fas', 'star',class: 'likeIcon')
+              %p (税込)
+
