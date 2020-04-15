@@ -6,6 +6,9 @@ $s: #3CCACE;
   background-color: cornsilk;
   &__list__box {
     background-color: #ffffff;
+    padding-top: 40px;
+    width: 70%;
+    margin: 0 auto;
     &__title {
       margin: 0 auto;
       width: 100vw;
@@ -18,11 +21,7 @@ $s: #3CCACE;
         font-size: 50px;
       }
     }
-  }
-  &__list__box {
-    padding-top: 40px;
-    width: 70%;
-    margin: 0 auto;
+  
     &__child__box {
       text-align:  center;
       padding-bottom: 40px;
@@ -41,5 +40,5 @@ $s: #3CCACE;
       padding-bottom: 10px;
       font-size: 15px;
     }
+   }
   }
-}
