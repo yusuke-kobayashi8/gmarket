@@ -13,8 +13,7 @@
   .header__under__main
     .header__under__main__left__list
       .header__under__main__left__list__category
-        = link_to('#', {}) do
-          カテゴリー
+        = link_to "カテゴリー", category_index_path,method: :get
       .header__under__main__left__list__brand
         = link_to('#', {}) do
           ブランド
