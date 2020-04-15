@@ -12,6 +12,11 @@
         background-color: white;
         display: inline-block;
         text-decoration: none;
+        .content__photo__imag {
+          height: 150px;
+          width: 220px;
+          object-fit: cover;
+        }
       }
       &__detil {
         background-color: white;

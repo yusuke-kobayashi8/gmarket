@@ -8,14 +8,12 @@
         .category__items__box__content__item
           =link_to product_path(product.id) do
             .category__items__box__content__photo
-              - product.images.each do |image|
-                = image_tag image.image.url,size:'220x150'
+              = image_tag product.images.first.image.url, class:"content__photo__imag"
             .category__items__box__content__detil
               .category__items__box__content__detil__name
                 = product.name
               .category__items__box__content__detil__price
                 = product.price 
                 円
-= paginate(@products)
 .footer
   =render 'products/footer'
