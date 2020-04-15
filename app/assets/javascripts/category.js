@@ -14,6 +14,15 @@ $(function(){
     $('.seller__main__content__box3__form1').append(html)
   }
 
+  function buildGrandChildren(insertHTML){
+    let html = 
+              `<select name="product[category]" id="grandchild_category">
+                <option value="">選択してください</option>
+                ${insertHTML}
+              </select>`
+    $('.seller__main__content__box3__form1').append(html)
+  }
+
   $('#product_category').change(function(){
     let parentId = $(this).val()
     if (parentId != ""){
@@ -25,19 +34,44 @@ $(function(){
       })
       .done(function(children){
         $('#child_category').remove()
-        $().remove()
+        $('#grandchild_category').remove()
         let insertHTML = '';
-        children.forEach(function(child){
-          insertHTML += appendOption(child)
+        children.forEach(function(grandchild){
+          insertHTML += appendOption(grandchild)
         })
         buildChildren(insertHTML)
       })
       .fail(function(){
-        alert('error');
+        alert('カテゴリを取得できませんでした');
       })
-    } else{
+    } else {
       $('#child_category').remove()
-        $().remove()
+      $('#grandchild_category').remove()
     }
   });
+
+  $('#category_form').on('change', '#child_category', function(){
+    let childId = $(this).val()
+    if (childId != ""){
+      $.ajax({
+        url: 'category_grandchildren',
+        type: 'GET',
+        data: { child_id: childId },
+        dataType: 'json'
+      })
+      .done(function(grandchildren){
+        $('#grandchild_category').remove()
+        let insertHTML = '';
+        grandchildren.forEach(function(grandchild){
+          insertHTML += appendOption(grandchild)
+        })
+        buildGrandChildren(insertHTML)
+      })
+      .fail(function(){
+        alert('カテゴリを取得できませんでした');
+      })
+    } else {
+      $('#grandchild_category').remove()
+    }
+  })
 });
