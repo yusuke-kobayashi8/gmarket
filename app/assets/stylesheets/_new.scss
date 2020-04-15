@@ -309,6 +309,14 @@
   @include product-collection-box;
 }
 
+#child_category{
+  @include product-collection-box;
+}
+
+#grandchild_category{
+  @include product-collection-box;
+}
+
 #product_status_id{
   @include product-collection-box;
 }
