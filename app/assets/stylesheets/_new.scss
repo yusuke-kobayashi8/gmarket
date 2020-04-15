@@ -49,6 +49,15 @@
           width:100%;
           font-size: 15px;
         }
+        .input-area {
+          height: 80px;
+          position: relative;
+
+          .fas {
+            position: absolute;
+            top: 30px auto;
+          }
+        }
       }
     }
     &__box2{
