@@ -29,25 +29,53 @@
       &__text{
         padding-top: 5px;
       }
-      &__image{
-        background-color: rgb(245, 245, 245);
-        border: 1px dashed gray;
-        margin-top: 5px; 
-        size: 10px;
-        &__upload{
-          text-align: center;
-          width: 100%;
-          padding-bottom: 20px;
+      #image-box-1 {
+        display: flex;
+
+        .item-image {
+          margin: 10px 5px 0;
+          border-style: dotted;
+
+          &__operetion {
+            height: 25px;
+
+            .item-image__operetion--delete {
+              color: #33CCFF;
+              margin: 10px 0 0 8px;
+              font-size: 15px;
+            }
+          }
         }
-        &__area{
-          display: none;
-        }
-        &__icon{
-          line-height: 70px;
-          text-align: center;
-          height: 50px;
-          width:100%;
-          font-size: 15px;
+      
+        #seller__main__content__box__image{
+          background-color: rgb(245, 245, 245);
+          border: 1px dashed gray;
+          margin: 10px 5px; 
+          size: 10px;
+          &__upload{
+            text-align: center;
+            width: 100%;
+            padding-bottom: 20px;
+          }
+          &__area{
+            display: none;
+          }
+          &__icon{
+            line-height: 70px;
+            text-align: center;
+            height: 50px;
+            width:100%;
+            font-size: 15px;
+          }
+          .input-area {
+            height: 80px;
+            position: relative;
+
+            .fas {
+              position: absolute;
+              top: 30px auto;
+            }
+          }
         }
       }
     }
@@ -566,4 +594,36 @@
     color: #3CCACE;
     text-decoration: none;
   }
+}
+
+.item-num-0{
+  width: 100%;
+}
+.item-num-1{
+  width: 491px;
+}
+.item-num-2{
+  width: 363px;
+}
+.item-num-3{
+  width: 234px;
+}
+.item-num-4{
+  width: 106px;
+}
+//下段のfile_field
+.item-num-5{
+  width: 100%;
+}
+.item-num-6{
+  width: 491px;
+}
+.item-num-7{
+  width: 363px;
+}
+.item-num-8{
+  width: 234px;
+}
+.item-num-9{
+  width: 106px;
 }
