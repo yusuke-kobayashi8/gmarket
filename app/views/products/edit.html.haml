@@ -9,11 +9,12 @@
         .seller__main__content__box__text
         最大10枚までアップロードできます
         #image-box-1
-          - @product.images.each do |image|
+          - @images.each do |image|
+            = image_tag image.image.url
             .item-image{"data-image" => "${file.name}"}
               .item-image__content
                 .item-image__content--icon
-                  %img{:height => "80", :src => "${src}", :width => "114"}/
+                  %img{:height => "80", :src => "image", :width => "114"}/
               .item-image__operetion
                 .item-image__operetion--delete 削除
 

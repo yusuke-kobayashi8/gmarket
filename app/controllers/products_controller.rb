@@ -41,7 +41,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
     @images = @product.images
   end
 
