@@ -41,8 +41,10 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
     @images = @product.images
+  end
+
+  def update
   end
 
   private
