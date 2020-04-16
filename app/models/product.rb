@@ -10,7 +10,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :delivery_cost
   belongs_to_active_hash :days_to_ship
   
-  has_many :images
+  has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
 
   validates_associated :images
