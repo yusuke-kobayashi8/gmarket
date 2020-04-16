@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to root_path, notice: "出品できました"
+      redirect_to root_path, notice: "出品しました"
     else
       redirect_to new_product_path, alert: "出品できません。入力必須項目を確認してください"
     end
