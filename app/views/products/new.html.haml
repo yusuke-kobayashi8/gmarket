@@ -45,7 +45,7 @@
           .seller__main__content__box3__brand__name1 ブランド
           .seller__main__content__box3__brand__name2 任意
         .seller__main__content__box3__form2
-          = f.text_field :brand, class: 'seller__main__content__box2__form4', placeholder: ' 例）シャネル'
+          = f.collection_select :brand_id, Brand.all, :id, :name, include_blank: "---"
         .seller__main__content__box3__status
           .seller__main__content__box3__status__name1
           商品の状態
