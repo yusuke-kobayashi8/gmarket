@@ -1,0 +1,61 @@
+.main__appBanner {
+  line-height:0;
+  position: relative;
+  .appBanner__imag {
+    height: 370px;
+    width: 100vw;
+    object-fit: cover;
+  }
+  &__contents {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 1px;
+    padding: 100px 40px;
+    &__info {
+      font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+      height: 100%;
+      &__titl {
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.4;
+        text-align: center;
+        color: $f;
+        margin-bottom: 10px;
+      }
+      &__text {
+        font-size: 35px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        text-align: center;
+        color: $f;
+        padding: 10px;
+
+      }
+      &__btn {
+        margin:10px 420px ;
+        height: 200px;
+        display: flex;
+        position: relative;
+        .ios__btn {
+          position: absolute;
+          top: 5px;
+          img:hover {
+            opacity: 0.5 ;
+         }
+         }
+        .google__btn {
+         height: 80px;
+         width: 180px;
+         position: absolute;
+         bottom: 0px;
+         top: 0px;
+         left: 170px;
+         img:hover {
+          opacity: 0.5 ;
+       }
+      }
+    }  
+    }
+  }
+}
