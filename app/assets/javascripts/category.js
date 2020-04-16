@@ -7,7 +7,7 @@ $(function(){
 
   function buildChildren(insertHTML){
     let html = 
-              `<select name="product[category]" id="child_category">
+              `<select name="product[category_id]" id="child_category">
                 <option value="">選択してください</option>
                 ${insertHTML}
               </select>`
@@ -16,14 +16,14 @@ $(function(){
 
   function buildGrandChildren(insertHTML){
     let html = 
-              `<select name="product[category]" id="grandchild_category">
+              `<select name="product[category_id]" id="grandchild_category">
                 <option value="">選択してください</option>
                 ${insertHTML}
               </select>`
     $('.seller__main__content__box3__form1').append(html)
   }
 
-  $('#product_category').change(function(){
+  $('#product_category_id').change(function(){
     let parentId = $(this).val()
     if (parentId != ""){
       $.ajax({
@@ -36,8 +36,8 @@ $(function(){
         $('#child_category').remove()
         $('#grandchild_category').remove()
         let insertHTML = '';
-        children.forEach(function(grandchild){
-          insertHTML += appendOption(grandchild)
+        children.forEach(function(child){
+          insertHTML += appendOption(child)
         })
         buildChildren(insertHTML)
       })
