@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit]
+  before_action :set_category_parents, only: [:new, :create, :edit, :update]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -10,7 +11,6 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
-    @category_parents = Category.where(ancestry: nil)
   end
 
   def category_children
@@ -24,9 +24,9 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to root_path
+      redirect_to root_path, notice: "出品できました"
     else
-      render :new
+      redirect_to new_product_path, alert: "出品できません。入力必須項目を確認してください"
     end
   end
 
@@ -65,5 +65,9 @@ class ProductsController < ApplicationController
 
     def set_product
       @product = Product.find(params[:id])
+    end
+
+    def set_category_parents
+      @category_parents = Category.where(ancestry: nil)
     end
 end
