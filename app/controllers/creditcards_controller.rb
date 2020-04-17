@@ -36,6 +36,7 @@ class CreditcardsController < ApplicationController
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
 
     if params['payjp-token'].blank?
+      flash.now[:alert] = '登録に失敗しました。'
       render "new"
     else
       customer = Payjp::Customer.create(
@@ -46,7 +47,7 @@ class CreditcardsController < ApplicationController
       )
       @card = Creditcard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to action: "index"
+        redirect_to creditcards_path
       else
         redirect_to action: "create"
       end
@@ -58,9 +59,35 @@ class CreditcardsController < ApplicationController
     customer = Payjp::Customer.retrieve(@card.customer_id)
     customer.delete
     if @card.destroy 
-      redirect_to action: "index", notice: "削除しました"
+      redirect_to creditcards_path, notice: "削除しました"
     else 
-      redirect_to action: "index", alert: "削除できませんでした"
+      redirect_to creditcards_path, alert: "削除できませんでした"
+    end
+  end
+
+  def buy
+    @product = Product.find(params[:product_id])
+    if @product.purchaser_id.present?
+      redirect_back
+
+    elsif @card.blank?
+      redirect_to new_creditcard_path
+      flash[:alert] = '購入にはクレジットカード登録が必要です'
+
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp::Charge.create(
+        amount:   @product.price,
+        customer: @card.customer_id,
+        currency: 'jpy',
+      )
+      if @product.update(purchaser_id: current_user.id)
+        flash[:notice] = '購入しました。'
+        redirect_to products_path
+      else
+        flash[:alert] = '購入に失敗しました。'
+        redirect_to products_path
+      end
     end
   end
 

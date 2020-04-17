@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   
-
   resources :products do
     collection do
       get 'category_children', defaults: {format: 'json'}
@@ -17,7 +16,9 @@ Rails.application.routes.draw do
   end
  
   resources "category", only: [:index, :show]
-  resources :creditcards, only: [:index, :new, :create, :destroy]
+
+  resources :creditcards, only: [:index, :new, :create, :destroy] 
+
   resources :mypage do
     collection do
       get :my_page
