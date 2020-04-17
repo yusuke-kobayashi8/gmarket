@@ -10,20 +10,20 @@
         最大10枚までアップロードできます
         #image-box-1
           - @images.each do |image|
-            = image_tag image.image.url
             .item-image{"data-image" => "${file.name}"}
               .item-image__content
                 .item-image__content--icon
-                  %img{:height => "80", :src => "image", :width => "114"}/
+                  = image_tag image.image.url, size: '114x80'
               .item-image__operetion
-                .item-image__operetion--delete 削除
+                .item-image__operetion__edit 編集
+                .item-image__operetion__delete 削除
 
-          .item-num-0#seller__main__content__box__image
-            = f.fields_for :images do |i|
-              .input-area
-                = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
-                %label{for: "img-file"}
-                  %i.fas.fa-camera
+          .item-num-0#seller__main__content__box__image              
+            .input-area
+              %label
+                = f.fields_for :images do |i|
+                  = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                %i.fas.fa-camera
       %hr
       .seller__main__content__box2
         .seller__main__content__box2__item

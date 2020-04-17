@@ -13,8 +13,8 @@
         #image-box-1
           .item-num-0#seller__main__content__box__image
             = f.fields_for :images do |i|
+              = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
               .input-area
-                = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
                 %label{for: "img-file"}
                   %i.fas.fa-camera
 

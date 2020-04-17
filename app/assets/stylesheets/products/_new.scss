@@ -39,8 +39,15 @@
 
           &__operetion {
             height: 25px;
+            display: flex;
 
-            .item-image__operetion--delete {
+            &__edit {
+              color: #33CCFF;
+              margin: 10px 20px 0 12px;
+              font-size: 15px;
+            }
+
+            &__delete {
               color: #33CCFF;
               margin: 10px 0 0 8px;
               font-size: 15px;
@@ -53,6 +60,7 @@
           border: 1px dashed gray;
           margin: 10px 5px; 
           size: 10px;
+          cursor: pointer;
           &__upload{
             text-align: center;
             width: 100%;
@@ -71,7 +79,7 @@
           .input-area {
             height: 80px;
             position: relative;
-
+            
             .fas {
               position: absolute;
               top: 30px auto;

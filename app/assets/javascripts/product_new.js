@@ -26,7 +26,8 @@ $(function(){
                       </div>
                     </div>
                     <div class='item-image__operetion'>
-                      <div class='item-image__operetion--delete'>削除</div>
+                      <div class='item-image__operetion__edit'>編集</div>
+                      <div class='item-image__operetion__delete'>削除</div>
                     </div>
                   </div>`
 
@@ -37,7 +38,7 @@ $(function(){
     });
   });
 
-  $(document).on("click", '.item-image__operetion--delete', function(){
+  $(document).on("click", '.item-image__operetion__delete', function(){
 
     var target_image = $(this).parent().parent()
     var target_name = $(target_image).data('image')
@@ -59,4 +60,11 @@ $(function(){
     $('#seller__main__content__box__image').show()
     $('#seller__main__content__box__image').attr('class', `item-num-${num}`)
   });
+
+  $(document).on("click", '.item-image__operetion__edit', function(){
+    var target_image = $(this).parent().parent()
+    var target_name = $(target_image).data('image')
+    console.log("ok")
+
+  })
 });
