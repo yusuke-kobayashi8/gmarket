@@ -36,8 +36,8 @@ class CreditcardsController < ApplicationController
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
 
     if params['payjp-token'].blank?
+      flash.now[:alert] = '登録に失敗しました。'
       render "new"
-      flash[:notice] = '登録に失敗しました。'
     else
       customer = Payjp::Customer.create(
         description: 'test', 

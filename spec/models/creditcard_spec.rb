@@ -9,19 +9,19 @@ RSpec.describe Creditcard, type: :model do
       expect(creditcard).to be_valid
     end
 
-    it "user_idが存在すれば登録できること" do
+    it "user_idが存在しなければ登録出来ない" do
       creditcard = build(:creditcard, user_id: nil)
       creditcard.valid?
       expect(creditcard.errors[:user_id]).to include("を入力してください")
     end
 
-    it "customer_idが存在すれば登録できること" do
+    it "customer_idが存在しなければ登録出来ない" do
       creditcard = build(:creditcard, customer_id: nil)
       creditcard.valid?
       expect(creditcard.errors[:customer_id]).to include("を入力してください")
     end
 
-    it "card_idが存在すれば登録できること" do
+    it "card_idが存在しなければ登録出来ない" do
       creditcard = build(:creditcard, card_id: nil)
       creditcard.valid?
       expect(creditcard.errors[:card_id]).to include("を入力してください")
