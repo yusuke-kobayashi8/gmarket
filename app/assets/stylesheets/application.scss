@@ -8,6 +8,8 @@
 @import "mixin/mixin";
 @import "products/new";
 @import "users/new";
+@import "modules/my_page";
+@import "modules/creditcards";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -25,4 +27,10 @@
  */
 @import "config/colors";
 @import "modules/flash";
+@import "modules/category";
+@import "modules/show_category";
+@import "modules/product_show";
+@import "modules/appBanner";
+@import "modules/destroy";
+
 
