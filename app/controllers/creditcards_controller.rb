@@ -37,6 +37,7 @@ class CreditcardsController < ApplicationController
 
     if params['payjp-token'].blank?
       render "new"
+      flash[:notice] = '登録に失敗しました。'
     else
       customer = Payjp::Customer.create(
         description: 'test', 
