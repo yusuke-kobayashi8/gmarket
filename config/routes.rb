@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   end
  
   resources "category", only: [:index, :show]
-  resources :creditcards, only: [:index, :new, :create, :destroy]
+
+  resources :creditcards, only: [:index, :new, :create, :destroy] 
+
   resources :mypage do
     collection do
       get :my_page
