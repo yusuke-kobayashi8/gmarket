@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :user, optional: true
+  belongs_to :user
   belongs_to :brand, optional: true
   belongs_to :category
   belongs_to :purchaser, class_name: 'User', foreign_key: :purchaser_id, optional: true
