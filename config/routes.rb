@@ -8,11 +8,14 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   
-  resources :products, only: [:new, :create, :show, :destroy, :edit] do
-    member do
-      post 'buy', to: 'purchase#buy'
+  resources :products do
+    collection do
+      get 'category_children', defaults: {format: 'json'}
+      get 'category_grandchildren', defaults: {format: 'json'}
     end
   end
+ 
+  resources "category", only: [:index, :show]
   resources :creditcards, only: [:index, :new, :create, :destroy]
   resources :mypage do
     collection do
@@ -26,4 +29,5 @@ Rails.application.routes.draw do
       get :my_page_sold
     end
   end
+
 end

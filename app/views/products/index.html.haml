@@ -98,20 +98,7 @@
     .main__pickup
       = render 'puroductsbrand'
     .main__appBanner
-      = image_tag 'bg-appBanner-pict.jpg', class: "appBanner__imag"
-      .main__appBanner__contents
-        .main__appBanner__contents__info 
-          .main__appBanner__contents__info__titl
-            %p だれでもかんたん、人生を変えるフリマアプリ
-          .main__appBanner__contents__info__text
-            %p 今すぐ無料ダウンロード！
-          .main__appBanner__contents__info__btn
-            .ios__btn
-              = link_to('#', {}) do
-                = image_tag 'Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg', size:'160x70'
-            .google__btn
-              = link_to('#', {}) do
-                = image_tag 'google-play-badge.png', size:'180x80'
+      =render 'appBanner'
   .footer
     =render 'footer'
   = link_to new_product_path do

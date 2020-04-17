@@ -1,0 +1,19 @@
+.header
+  =render "products/header"
+.category
+  - @category_parent.each do |parent|
+    .category__title__box
+      .category__list__box__title
+        .category__parent__name
+          = parent.name
+    .category__list__box
+      - parent.children.each do |children|
+        .category__list__box__child__box
+          .category__list__box__child__box__name
+            %h4
+              = children.name
+              .category__list__box__grand__child__box
+                - children.children.each do |grandchild|
+                  .category__list__box__grand__cild__name
+                    = link_to category_path(grandchild), class: "category__list__box__grand__cild__name__text" do
+                      = grandchild.name
