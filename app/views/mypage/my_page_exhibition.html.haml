@@ -1,3 +1,4 @@
+= render 'products/header'
 .wallpaper
   .main2
     .main2__right-contents
@@ -7,12 +8,14 @@
         .main2__right-contents__tabs
           .main2__right-contents__tabs__a1
             出品中
-          = link_to "/mypage/my_page_exhibiting", class: "main2__right-contents__tabs__n1" do
+          = link_to my_page_exhibiting_mypage_path(current_user.id), class: "main2__right-contents__tabs__n1" do
             取引中
-          = link_to "/mypage/my_page_sold", class: "main2__right-contents__tabs__n1" do
+          = link_to my_page_sold_mypage_path(current_user.id), class: "main2__right-contents__tabs__n1" do
             売却済
       .main2__right-contents__content
         %ul
           %li.main2__right-contents__content__not 
             出品中の商品がありません
     = render "side_ber"
+.footer
+  =render 'products/footer'

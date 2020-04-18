@@ -1,3 +1,4 @@
+= render 'products/header'
 .wallpaper
   .main2
     .main2__right-contents
@@ -6,7 +7,7 @@
         .main2__right-contents__user-icon__a
           = image_tag "member_photo_noimage_thumb.png", size: "60x60"
           .main2__right-contents__user-icon__a--user-name
-            user
+            = current_user.nickname
       .main2__right-contents__purchase-container
         .main2__right-contents__purchase-container--h2
           購入した商品
@@ -18,3 +19,5 @@
           .main2__right-contents__purchase-container__info
             過去に取引した商品がありません
     = render "side_ber"
+.footer
+  =render 'products/footer'
