@@ -1,61 +1,66 @@
 .main__pickup__content {
-  height: 420px;
-  padding-bottom: 80px;
-  background-color: #f8f8f8;
+  height: 100%;
   padding-top: 80px;
-  &__categorie {
+  background-color: #f8f8f8;
+
+  &__category {
     text-align: center;
     font-size: 28px;
     line-height: 1.4;
     padding-bottom: 15px;
     font-weight: bold;
   }
+
+  &__subtitle {
+    text-align: center;
+    p {
+      text-decoration: none;
+      font-weight: bold;
+      color: #3CCACE;
+      font-size: 24px;
+    }
+  }
+
   &__productlist {
-    &__new__title {
-      text-align: center;
-      a{
-        text-decoration: none;
-      }
-      p {
-        font-weight: bold;
-        color: #3CCACE;
-        font-size: 24px;
-      }
+    width: 780px;
+    margin: 26px auto;
+    display: flex;
+
+    a{
+      text-decoration: none;
     }
-    &__new__items {
+
+    &__newitem {
+      margin: 0 26px;
       width: 780px;
-      margin: 26px auto;
       display: flex;
-      justify-content: space-around;
-    }
-      &__new__item {
-        width: 220px;
-        a {
-          background-color: #fff;
-          display: inline-block;
-          text-decoration: none;
-        }
-        a:hover {
-          opacity: 0.8;
-        }
-      }
-      &__new__item__info {
+      justify-content: space-between;
+      
+      &__box{
         background-color: white;
-        color: #333;
-        padding: 16px;
-        &__name{
-          font-size: 16px;
-          line-height: 1.5;
-        }
-        &__detail__price {
-          line-height: 1.5;
-          font-size: 16px;
-          text-align: left
-        }
-        &__detail__price__tax {
-          font-size: 10px;
-          text-align: left;
+        width: 220px;
+       
+        &__text{
+          padding: 16px;
+
+          &__name{
+            line-height: 1.5;
+            font-size: 16px;
+            text-align: left;
+          }
+
+          &__price{
+            line-height: 1.5;
+            font-size: 16px;
+            text-align: left
+          }
+
+          p {
+            font-size: 12px;
+            text-align: left;
+          }
         }
       }
+    }
   }
 }
