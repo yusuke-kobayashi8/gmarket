@@ -1,0 +1,65 @@
+= render '/devise/registrations/signup-header'
+
+.buy-conf
+  .buy-conf__main
+    %h2.buy-conf__main__head
+      購入内容の確認
+    .buy-conf__main__content
+      .buy-conf__main__content__box
+        .buy-conf__main__content__box--img
+          = image_tag @image.image.url, class: "buy-conf__img"
+        .buy-conf__main__content__box--detail
+          %p.buy-conf__name
+            = @product.name
+          %p.buy-conf__price
+            %span
+              ￥
+              = @product.price
+              (税込み)
+            %span
+              = @product.delivery_cost.name
+    .buy-conf__main__content
+      .buy-conf__main__content__inner
+        %ul.price-table
+          %li.price-table__payment
+            支払い金額
+          %li.price-table__price
+            ￥
+            = @product.price
+        .payment-info
+          .buy-conf__main__content__inner
+            %h3.payment-info__method
+              支払い方法
+            - if @card.present?
+              = form_with url: creditcard_path(@card.id), class:"credit-main__info-box__content", method: :delete, local: true do |f|
+                %figure
+                  = image_tag @card_src, width: '34', height: '20', alt: @card_brand, id: "card_image"
+                .credit-main__info-box__content__num
+                  = "**** **** **** " + @card_information.last4
+                .credit-main__info-box__content__num
+                  - exp_month = @card_information.exp_month.to_s
+                  - exp_year = @card_information.exp_year.to_s.slice(2,3)
+                  = exp_month + " / " + exp_year
+                %input{type: "hidden", name: "card_id", value: ""}
+                = f.submit "削除する", {class: "credit-main__info-box__destroy"}
+            - else
+              = link_to new_creditcard_path, class:"credit-main__info-box__button" do
+                %i.far.fa-credit-card 
+                クレジットカードを追加する
+      .buy-conf__main__content__inner
+        .delivery-address
+          %h3.delivery__address__info
+            配送先
+          = link_to("#", {}) do
+            変更する
+        %address.buy-user__address
+          %p 
+            〒
+            = @address.postal_code
+            %br
+            = @address.prefecture.name + @address.city + @address.address 
+            = @address.building if @address.building.presence
+            %br
+            = @address.posting_family_name + " " + @address.posting_first_name 
+.footer
+  =render '/products/footer'
