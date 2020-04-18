@@ -82,7 +82,7 @@
                 %p 商品の編集
           - else 
             .user__post__buy
-              = link_to('＃') do
+              = link_to buy_conf_creditcard_path(product_id: @product.id) do
                 %p 商品の購入に進む
         - else 
           .user__post__buy__loginyet
