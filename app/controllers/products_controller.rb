@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
+    @product_unsold = Product.includes(:images).where(purchaser_id: nil)
   end
 
   def new
