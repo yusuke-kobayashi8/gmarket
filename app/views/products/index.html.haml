@@ -101,13 +101,9 @@
       =render 'appBanner'
   .footer
     =render 'footer'
-  = link_to new_product_path do
-    .sell__btn
-      .sell__btn__text
-        %p 出品する
-      .sell__btn__icon
-        = image_tag 'icon_camera.png', size:'54x54'
-
+  .btn-container
+    =render 'sell_button'
+    
   -# 以下動作確認用の仮置きのビューです
   .contener
     = render @products
