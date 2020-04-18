@@ -9,11 +9,11 @@
         .seller__main__content__box__text
         最大10枚までアップロードできます
         #image-box-1
-          - @images.each do |image|
-            .item-image{"data-image" => "${file.name}"}
+          - @images.each_with_index do |image, i|
+            .item-image{"data-image_id" => i}
               .item-image__content
                 .item-image__content--icon
-                  = image_tag image.image.url, size: '114x80'
+                  = image_tag image.image.url, size: '114x80', alt: "preview"
               .item-image__operetion
                 .item-image__operetion__edit 編集
                 .item-image__operetion__delete 削除

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       get 'category_grandchildren', defaults: {format: 'json'}
     end
   end
- 
+  
   resources "category", only: [:index, :show]
   resources :creditcards, only: [:index, :new, :create, :destroy]
   resources :mypage do
