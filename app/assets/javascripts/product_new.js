@@ -1,7 +1,6 @@
 $(function(){
-  //DataTransferオブジェクトで、データを格納する箱を作る
+
   var dataBox = new DataTransfer();
-  //querySelectorでfile_fieldを取得
   var file_field = document.querySelector('input[type=file]')
 
   $('#img-file').change(function(){

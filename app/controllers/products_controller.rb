@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:show, :edit]
+  before_action :set_category_parents, only: [:new, :create, :edit, :update]
+
   def index
     @products = Product.includes(:images).order('created_at DESC')
   end
@@ -6,31 +9,26 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
-    @category_parents = []
-    Category.where(ancestry: nil).each do |parent|
-      @category_parents << parent
-    end
   end
 
   def category_children
-    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    @category_children = Category.find("#{params[:parent_id]}").children
   end
 
   def category_grandchildren
-    
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to root_path
+      redirect_to root_path, notice: "出品しました"
     else
-      render :new
+      redirect_to new_product_path, alert: "出品できません。入力必須項目を確認してください"
     end
   end
 
   def show
-    @product = Product.find(params[:id])
     @images = @product.images
     @image = @images.first
   end
@@ -41,9 +39,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @images = @product.images
   end
 
+  def update
+  end
 
   private
 
@@ -59,5 +59,13 @@ class ProductsController < ApplicationController
         :category_id,
         :brand_id,
         images_attributes: [:image]).merge(user_id: current_user.id)
+    end
+
+    def set_product
+      @product = Product.find(params[:id])
+    end
+
+    def set_category_parents
+      @category_parents = Category.where(ancestry: nil)
     end
 end

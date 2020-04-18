@@ -1,4 +1,3 @@
-= render '/devise/registrations/signup-header'
 .seller__main 
   .seller__main__content
     = form_with model: @product, local: true do |f|
@@ -9,15 +8,22 @@
           .seller__main__content__box__name__text2 必須
         .seller__main__content__box__text
         最大10枚までアップロードできます
-
         #image-box-1
+          - @images.each do |image|
+            = image_tag image.image.url
+            .item-image{"data-image" => "${file.name}"}
+              .item-image__content
+                .item-image__content--icon
+                  %img{:height => "80", :src => "image", :width => "114"}/
+              .item-image__operetion
+                .item-image__operetion--delete 削除
+
           .item-num-0#seller__main__content__box__image
             = f.fields_for :images do |i|
               .input-area
                 = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
                 %label{for: "img-file"}
                   %i.fas.fa-camera
-
       %hr
       .seller__main__content__box2
         .seller__main__content__box2__item
@@ -42,13 +48,13 @@
           .seller__main__content__box3__category__name1
           カテゴリー
           .seller__main__content__box3__category__name2 必須
-        #category_form.seller__main__content__box3__form1 
-          = f.collection_select :category_id, @category_parents, :id, :name, include_blank: "選択してください"
+        .seller__main__content__box3__form1 
+          -# = f.collection_select :category, @category_parents, :id, :name, include_blank: "選択してください"
         .seller__main__content__box3__brand
           .seller__main__content__box3__brand__name1 ブランド
           .seller__main__content__box3__brand__name2 任意
         .seller__main__content__box3__form2
-          = f.collection_select :brand_id, Brand.all, :id, :name, include_blank: "---"
+          = f.text_field :brand, class: 'seller__main__content__box2__form4', placeholder: ' 例）シャネル'
         .seller__main__content__box3__status
           .seller__main__content__box3__status__name1
           商品の状態
@@ -90,13 +96,12 @@
           .seller__main__content__box5__profit 販売利益
           %span{"class" => "seller__main__content__box5__commission__name1"} ー
         .seller__main__content__box5__btn
-          = f.submit '出品する', class: 'seller__main__content__box5__btn__exhibition'
+          = f.submit '変更する', class: 'seller__main__content__box5__btn__exhibition'
           -# = f.submit '下書きに保存する', class: 'seller__main__content__box5__btn__draft'
           -# = f.submit 'もどる', class: 'seller__main__content__box5__btn__return'
         .seller__main__content__box5__text 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
         
-.footer
-  = render 'footer'        
+        
 -# 動作確認用の仮置きのビューです
 
 -# = render partial: 'form'
