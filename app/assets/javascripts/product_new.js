@@ -65,6 +65,8 @@ $(function(){
     var target_image = $(this).parent().parent()
     var target_name = $(target_image).data('image')
     console.log("ok")
-
+    $('.item-image').val("");
+    $('#img-file').trigger("click");
+    
   })
 });
