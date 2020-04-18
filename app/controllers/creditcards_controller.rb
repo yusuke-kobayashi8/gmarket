@@ -2,6 +2,7 @@ class CreditcardsController < ApplicationController
 
   require "payjp"
   before_action :set_card
+  before_action :set_product, only: [:buy, :buy_conf]
 
   def index 
     if @card.present?
@@ -66,7 +67,6 @@ class CreditcardsController < ApplicationController
   end
 
   def buy
-    @product = Product.find(params[:product_id])
     if @product.purchaser_id.present?
       redirect_back
 
@@ -91,9 +91,17 @@ class CreditcardsController < ApplicationController
     end
   end
 
+  def buy_conf
+    
+  end
+
   private
 
   def set_card
     @card = Creditcard.where(user_id: current_user.id).first if Creditcard.where(user_id: current_user.id).present?
+  end
+
+  def set_product
+    @product = Product.find(params[:product_id])
   end
 end
