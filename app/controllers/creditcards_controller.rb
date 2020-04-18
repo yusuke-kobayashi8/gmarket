@@ -92,7 +92,8 @@ class CreditcardsController < ApplicationController
   end
 
   def buy_conf
-    
+    @image = @product.images.first
+    @address = current_user.address
   end
 
   private
