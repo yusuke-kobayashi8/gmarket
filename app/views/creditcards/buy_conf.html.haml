@@ -60,6 +60,9 @@
             = @address.prefecture.name + @address.city + @address.address 
             = @address.building if @address.building.presence
             %br
-            = @address.posting_family_name + " " + @address.posting_first_name 
+            = @address.posting_family_name + " " + @address.posting_first_name
+      .buy-conf__decision-btn
+        
+
 .footer
   =render '/products/footer'
