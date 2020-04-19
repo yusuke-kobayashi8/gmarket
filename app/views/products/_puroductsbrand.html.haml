@@ -9,7 +9,7 @@
         .main__pickup__content__productlist__newitem__box
           = link_to product_path(id: product.id) do
             .main__pickup__content__productlist__newitem__box__pic
-              = image_tag product.images[0].image.url, size:'220x150'
+              = image_tag product.images[0].image.url, size:'220x150', class: "propic"
             .main__pickup__content__productlist__newitem__box__text
               .main__pickup__content__productlist__newitem__box__text__name
                 = product.name

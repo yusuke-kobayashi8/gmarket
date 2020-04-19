@@ -39,7 +39,6 @@
       &__box{
         background-color: white;
         width: 220px;
-       
         &__text{
           padding: 16px;
 
@@ -63,4 +62,8 @@
       }
     }
   }
+}
+
+img.propic{
+  object-fit: cover;
 }
