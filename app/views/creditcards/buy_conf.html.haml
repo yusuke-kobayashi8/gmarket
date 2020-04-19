@@ -43,7 +43,7 @@
                 %input{type: "hidden", name: "card_id", value: ""}
                 = f.submit "削除する", {class: "credit-main__info-box__destroy"}
             - else
-              = link_to new_creditcard_path, class:"credit-main__info-box__button" do
+              = link_to new_creditcard_path, class:"buy-conf__decision__btn" do
                 %i.far.fa-credit-card 
                 クレジットカードを追加する
       .buy-conf__main__content__inner
@@ -61,8 +61,15 @@
             = @address.building if @address.building.presence
             %br
             = @address.posting_family_name + " " + @address.posting_first_name
-      .buy-conf__decision-btn
-        
+      .buy-conf__decision.buy-conf__main__content__inner
+        - if @card.present?
+          = form_with url: buy_creditcard_path, local: true do |f|
+            = f.hidden_field :product_id, value: @product.id
+            = f.submit "購入を確定する", class: "buy-conf__decision__btn"
+        - else
+          = form_with url: buy_creditcard_path, local: true do |f|
+            = f.hidden_field :product_id, value: @product.id
+            = f.submit "購入を確定する", disabled: true, class: "buy-conf__decision__disabled"
 
 .footer
   =render '/products/footer'
