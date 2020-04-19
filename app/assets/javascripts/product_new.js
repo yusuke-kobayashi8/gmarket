@@ -62,10 +62,13 @@ $(function(){
   });
 
   $(document).on("click", '.item-image__operetion__edit', function(){
-    var target_image = $(this).parent().parent()
-    var target_name = $(target_image).data('image')
-    console.log("ok")
-    $('.item-image').val("");
+    // var target_image = $(this).parent().parent()
+    // var target_name = $(target_image).data('image')
+    var id = $('.item-image').data('image_id');
+    console.log(id)
+    
+    $(`#product_images_attributes_${id}_id`).val("");
+    console.log()
     $('#img-file').trigger("click");
 
   })
