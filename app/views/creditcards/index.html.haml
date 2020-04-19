@@ -1,0 +1,34 @@
+= render 'products/header'
+.wallpaper
+  .main2
+    .main2__right-contents
+      .credit-head
+        支払い方法
+      .credit-main
+        .credit-main__info-box
+          %h3 クレジットカード一覧
+          - if @card.present?
+            = form_with url: creditcard_path(@card.id), class:"credit-main__info-box__content", method: :delete, local: true do |f|
+              %figure
+                = image_tag @card_src, width: '34', height: '20', alt: @card_brand, id: "card_image"
+              .credit-main__info-box__content__num
+                = "**** **** **** " + @card_information.last4
+              .credit-main__info-box__content__num
+                - exp_month = @card_information.exp_month.to_s
+                - exp_year = @card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
+              %input{type: "hidden", name: "card_id", value: ""}
+              = f.submit "削除する", {class: "credit-main__info-box__destroy"}
+          - else
+            = link_to new_creditcard_path, class:"credit-main__info-box__button" do
+              %i.far.fa-credit-card 
+              クレジットカードを追加する
+    = render "/mypage/side_ber"
+.footer
+  =render 'products/footer'
+= link_to new_product_path do
+  .sell__btn
+    .sell__btn__text
+      %p 出品する
+    .sell__btn__icon
+      = image_tag 'icon_camera.png', size:'54x54'

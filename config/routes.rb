@@ -7,7 +7,31 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end
-  
-  resources :products, only: [:new, :create, :show, :destroy, :edit]
 
+  resources :products do
+    collection do
+      get 'category_children', defaults: {format: 'json'}
+      get 'category_grandchildren', defaults: {format: 'json'}
+    end
+  end
+ 
+  resources "category", only: [:index, :show]
+
+  resources :creditcards, only: [:index, :new, :create, :destroy] do
+    member do
+      post :buy
+      get  :buy_conf
+    end
+  end
+
+  resources :mypage , only: [:show] do
+    member do
+      get :my_page_logout
+      get :my_page_transaction
+      get :my_page_transactiond
+      get :my_page_exhibition
+      get :my_page_exhibiting
+      get :my_page_sold
+    end
+  end
 end

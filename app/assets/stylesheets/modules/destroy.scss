@@ -1,0 +1,26 @@
+.destoroy {
+  height: 300px;
+  padding: 50px;
+  &__alert {
+    width: 38%;
+    margin: 0 auto;
+    p {
+      font-size: 40px;
+    }
+  }
+  &__back {
+    margin: 50px auto;
+    line-height: 48px;
+    background: #3CCACE;
+    border: 1px solid #3CCACE;
+    color: #fff;
+    width: 60%;
+    font-size: 18px;
+    border-radius: 100px;
+    p {
+      text-align: center;
+      color: white;
+      font-size: 18px;
+    }
+  }
+}

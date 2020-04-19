@@ -1,42 +1,119 @@
--# 詳細ページ確認用
-.hoge
-  %p 
-    = @product.name
-  %p 
-    = @product.price
-  %p 
-    = @product.detail
-  %p 
-    = @product.status.name
-  %p 
-    = @product.prefecture.name
-  %p
-    = @product.delivery_cost.name
-  %p
-    = @product.days_to_ship.name
-  %p
-    = link_to('＃') do
-      = @product.category.parent.parent.name
-  %p
-    = link_to('＃') do
-      = @product.category.parent.name
-  %p
-    = link_to('＃') do
-      = @product.category.name
-  %p
-    - @product.images.each do |image|
-      = image_tag image.image.url
-      
-- if user_signed_in?
-  - if current_user.id == @product.user_id
-    .user_prodct_delete
-      = link_to "/products/#{@product.id}", method: :delete do
-        %p 商品の削除
-    .user_post_edit
-      = link_to edit_product_path(@product.id), method: :get do
-        %p 商品の編集
-  - else 
-    = link_to('＃') do
-      %p 商品の購入に進む
-- else 
-  %p ログインしてください
+.header
+  = render 'header'
+.puroduct__show
+  .puroduct__show__main
+    .puroduct__show__main__item
+      .puroduct__show__main__item__name
+        = @product.name
+      .puroduct__show__main__item__phots
+        .puroduct__show__main__item__phots__top
+          = image_tag @product.images.first.image.url, class:"top__imag"
+        %ul
+          - @product.images.each do |image|
+            %li
+              = image_tag image.image.url, class: "sub__imag"
+      .puroduct__show__main__item__price
+        %span 
+          = @product.price
+        %span 円
+        .puroduct__show__main__item__price__detil
+      .puroduct__show__main__item__text
+        = @product.detail
+      .puroduct__show__main__item__detil
+        %table
+          %tbody
+            %tr
+              %th
+                出品者
+              %td
+                = @product.user.nickname
+            %tr
+              %th
+                カテゴリー
+              %td
+                = @product.category.parent.parent.name
+                %br/
+                = @product.category.parent.name
+                %br/
+                = @product.category.name
+            %tr
+              %th
+                ブランド
+              %td
+            %tr
+              %th
+                商品のサイズ
+              %td
+            %tr
+              %th
+                商品の状態
+              %td
+                = @product.status.name
+            %tr
+              %th
+                配送料の負担
+              %td
+                = @product.delivery_cost.name
+            %tr
+              %th
+                発送元の地域
+              %td
+                = @product.prefecture.name
+            %tr
+              %th
+                発送日の目安
+              %td
+                = @product.days_to_ship.name
+      .puroduct__show__main__item__option
+        .puroduct__show__main__item__option__likebtn
+          = icon('fa', 'star')
+          お気に入り0
+        .puroduct__show__main__item__option__warningbtn
+          = icon('fa', 'flag')
+          不適切な商品の通報
+      .puroduct__show__main__item__select
+        - if user_signed_in?
+          - if current_user.id == @product.user_id
+            .user__prodct__delete
+              = link_to "/products/#{@product.id}", method: :delete do
+                %p 商品の削除
+            .user__post__edit
+              = link_to edit_product_path(@product.id), method: :get do
+                %p 商品の編集
+          - else 
+            .user__post__buy
+              = link_to buy_conf_creditcard_path(product_id: @product.id) do
+                %p 商品の購入に進む
+        - else 
+          .user__post__buy__loginyet
+            = link_to new_user_session_path do
+              %p 商品の購入に進む
+    .puroduct__show__main__comment
+      .puroduct__show__main__comment__form
+        .puroduct__show__main__comment__form__text
+          = form_with do |f|
+            = f.text_area :text, class: 'text__area__show'
+            .puroduct__show__main__comment__form__warning
+              相手のことを考え丁寧なコメントを心がけましょう。
+              %br/
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            .puroduct__show__main__comment__form__sendbtn
+              = f.submit "コメントする", class: 'commentbtn'
+    .puroduct__show__main__links
+      .puroduct__show__main__links__back
+        = link_to('#', {}) do
+          %p <前の商品
+      .puroduct__show__main__links__next
+        = link_to('#', {}) do
+          %p 次の商品>
+    .puroduct__show__main__category
+      = link_to('#', {}) do
+        %p
+          = @product.category.name
+          をもっとみる
+.puroduct__appBanner
+  = render 'appBanner'
+.footer
+  =render 'footer'
+.btn-container
+  =render 'sell_button'
