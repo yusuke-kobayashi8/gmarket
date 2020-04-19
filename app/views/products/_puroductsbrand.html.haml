@@ -5,7 +5,7 @@
     %p アーカイバ
   .main__pickup__content__productlist
     .main__pickup__content__productlist__newitem
-      - @product_unsold.last(3).each do |product|
+      - @product_unsold.first(3).each do |product|
         .main__pickup__content__productlist__newitem__box
           = link_to product_path(id: product.id) do
             .main__pickup__content__productlist__newitem__box__pic
