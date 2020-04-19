@@ -1,0 +1,107 @@
+.seller__main 
+  .seller__main__content
+    = form_with model: @product, local: true do |f|
+      .seller__main__content__box
+        .seller__main__content__box__name
+          .seller__main__content__box__name__text1 
+          出品画像
+          .seller__main__content__box__name__text2 必須
+        .seller__main__content__box__text
+        最大10枚までアップロードできます
+        #image-box-1
+          - @images.each do |image|
+            = image_tag image.image.url
+            .item-image{"data-image" => "${file.name}"}
+              .item-image__content
+                .item-image__content--icon
+                  %img{:height => "80", :src => "image", :width => "114"}/
+              .item-image__operetion
+                .item-image__operetion--delete 削除
+
+          .item-num-0#seller__main__content__box__image
+            = f.fields_for :images do |i|
+              .input-area
+                = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                %label{for: "img-file"}
+                  %i.fas.fa-camera
+      %hr
+      .seller__main__content__box2
+        .seller__main__content__box2__item
+          .seller__main__content__box2__item__name1
+          商品名
+          .seller__main__content__box2__item__name2 必須
+        .seller__main__content__box2__form1
+          = f.text_field :name, class: 'seller__main__content__box2__form4', placeholder: '  40文字まで'
+        .seller__main__content__box2__expeanatory
+          .seller__main__content__box2__expeanatory__text1
+          商品説明
+          .seller__main__content__box2__expeanatory__text2 必須
+        .seller__main__content__box2__form2
+          = f.text_area :detail, class: 'seller__main__content__box2__form2', placeholder:' 商品の説明（必須1000文字以内） &#13;&#10; (色、素材、重さ、定価、注意点など）&#13;&#10;&#13;&#10;例） 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'.html_safe
+        .seller__main__content__box2__textcount
+          0/1000 
+      %hr
+      .seller__main__content__box3
+        .seller__main__content__box3__name
+        商品の詳細
+        .seller__main__content__box3__category
+          .seller__main__content__box3__category__name1
+          カテゴリー
+          .seller__main__content__box3__category__name2 必須
+        .seller__main__content__box3__form1 
+          -# = f.collection_select :category, @category_parents, :id, :name, include_blank: "選択してください"
+        .seller__main__content__box3__brand
+          .seller__main__content__box3__brand__name1 ブランド
+          .seller__main__content__box3__brand__name2 任意
+        .seller__main__content__box3__form2
+          = f.text_field :brand, class: 'seller__main__content__box2__form4', placeholder: ' 例）シャネル'
+        .seller__main__content__box3__status
+          .seller__main__content__box3__status__name1
+          商品の状態
+          .seller__main__content__box3__status__name2 必須
+        .seller__main__content__box3__form3
+          = f.collection_select :status_id, Status.all, :id, :name, include_blank: "選択してください"
+      %hr
+      .seller__main__content__box4
+        .seller__main__content__box4__name 配送について
+        .seller__main__content__box4__shipping__charges
+          .seller__main__content__box4__shipping__charges__name1 配送料の負担
+          .seller__main__content__box4__shipping__charges__name2 必須
+        .seller__main__content__box4__form1
+          = f.collection_select :delivery_cost_id, DeliveryCost.all, :id, :name, include_blank: "選択してください"
+        .seller__main__content__box4__shipping__area
+          .seller__main__content__box4__shipping__area__name1 発送地域
+          .seller__main__content__box4__shipping__area__name2 必須
+        .seller__main__content__box4__form2
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: "選択してください"
+        .seller__main__content__box4__shipping__days
+          .seller__main__content__box4__shipping__days__name1 発送までの日数
+          .seller__main__content__box4__shipping__days__name2 必須
+        .seller__main__content__box4__form3
+          = f.collection_select :days_to_ship_id, DaysToShip.all, :id, :name, include_blank: "選択してください"
+      %hr
+      .seller__main__content__box5
+        .seller__main__content__box5__name 価格 (¥300〜9,999,999)
+        .seller__main__content__box5__price
+          .seller__main__content__box5__price__name1 販売価格 
+          .seller__main__content__box5__price__name2 必須
+          %span{"class" => "seller__main__content__box5__price__span"} ￥
+          .seller__main__content__box5__price__form 
+            = f.number_field :price, class: 'seller__main__content__box5__price__form__4'
+        .seller__main__content__box5__commission
+          .seller__main__content__box5__commission__name 販売手数料 (10%) 
+          %span{"class" => "seller__main__content__box5__commission__name1"} ー
+        %hr
+        .seller__main__content__box5__commission2
+          .seller__main__content__box5__profit 販売利益
+          %span{"class" => "seller__main__content__box5__commission__name1"} ー
+        .seller__main__content__box5__btn
+          = f.submit '変更する', class: 'seller__main__content__box5__btn__exhibition'
+          -# = f.submit '下書きに保存する', class: 'seller__main__content__box5__btn__draft'
+          -# = f.submit 'もどる', class: 'seller__main__content__box5__btn__return'
+        .seller__main__content__box5__text 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+        
+        
+-# 動作確認用の仮置きのビューです
+
+-# = render partial: 'form'

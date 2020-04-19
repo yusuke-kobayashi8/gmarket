@@ -1,0 +1,29 @@
+= render 'products/header'
+.wallpaper
+  .main2
+    .main2__right-contents
+      .main2__right-contents__user-icon
+        = image_tag "mypage-user.jpg", size: "700x200"
+        .main2__right-contents__user-icon__a
+          = image_tag "member_photo_noimage_thumb.png", size: "60x60"
+          .main2__right-contents__user-icon__a--user-name
+            = current_user.nickname
+      .main2__right-contents__purchase-container
+        .main2__right-contents__purchase-container--h2
+          購入した商品
+        .main2__right-contents__purchase-container__tabs
+          .main2__right-contents__purchase-container__tabs--a
+            取引中
+          .main2__right-contents__purchase-container__tabs--a
+            過去の取引
+          .main2__right-contents__purchase-container__info
+            過去に取引した商品がありません
+    = render "side_ber"
+.footer
+  =render 'products/footer'
+= link_to new_product_path do
+  .sell__btn
+    .sell__btn__text
+      %p 出品する
+    .sell__btn__icon
+      = image_tag 'icon_camera.png', size:'54x54'

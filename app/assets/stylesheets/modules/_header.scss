@@ -1,14 +1,14 @@
 .header {
   height: 100px;
-  padding: 0 60px;
   background-color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
 
   &__contents {
     max-width: 1040px;
     width: 100%;
-    height: 100px;
-    margin: 0 auto;
+    height: 105px;
+    margin: auto;
     padding-top: 15px;
 
     .header__up__main {
@@ -93,10 +93,15 @@
       &__right__list {
         margin-left: auto;
         display: flex;
+        margin-top: 15px;
+        margin-right: 50px;
+        &__logout__user {
+          margin-left: 20px;
+          font-size: 13px;
+        }
 
         &__crrent__user {
-          padding-left: 30px;
-          line-height: 40px;        
+          padding-left: 30px;      
           font-size: 13px;
           text-decoration: none;
           color: black;
@@ -104,7 +109,6 @@
 
         &__new__user {
           padding-left: 30px;
-          line-height: 40px;
           font-size: 13px;
           text-decoration: none;
           color: black;

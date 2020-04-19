@@ -1,0 +1,15 @@
+= render 'products/header'
+.wallpaper
+  .main2
+    .main2__right-contents
+      .main2__right-contents__user-icon
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout-button"
+    = render "side_ber"
+.footer
+  =render 'products/footer'
+= link_to new_product_path do
+  .sell__btn
+    .sell__btn__text
+      %p 出品する
+    .sell__btn__icon
+      = image_tag 'icon_camera.png', size:'54x54'

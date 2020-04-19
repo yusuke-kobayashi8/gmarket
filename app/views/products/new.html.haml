@@ -9,14 +9,15 @@
           .seller__main__content__box__name__text2 必須
         .seller__main__content__box__text
         最大10枚までアップロードできます
-        .seller__main__content__box__image
-          = f.fields_for :images do |i|
-            = i.label :image do
-              = icon('fas', 'camera', class:'seller__main__content__box__image__icon')
-              = i.file_field :image, class:'seller__main__content__box__image__area'
-              .seller__main__content__box__image__upload
-                ドラッグアンドドロップ  
-                %br  またはクリックしてファイルをアップロード          
+
+        #image-box-1
+          .item-num-0#seller__main__content__box__image
+            = f.fields_for :images do |i|
+              .input-area
+                = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                %label{for: "img-file"}
+                  %i.fas.fa-camera
+
       %hr
       .seller__main__content__box2
         .seller__main__content__box2__item
@@ -41,13 +42,13 @@
           .seller__main__content__box3__category__name1
           カテゴリー
           .seller__main__content__box3__category__name2 必須
-        .seller__main__content__box3__form1 
-          = f.collection_select :category, @category_parents, :id, :name, include_blank: "選択してください"
+        #category_form.seller__main__content__box3__form1 
+          = f.collection_select :category_id, @category_parents, :id, :name, include_blank: "選択してください"
         .seller__main__content__box3__brand
           .seller__main__content__box3__brand__name1 ブランド
           .seller__main__content__box3__brand__name2 任意
         .seller__main__content__box3__form2
-          = f.text_field :brand, class: 'seller__main__content__box2__form4', placeholder: ' 例）シャネル'
+          = f.collection_select :brand_id, Brand.all, :id, :name, include_blank: "---"
         .seller__main__content__box3__status
           .seller__main__content__box3__status__name1
           商品の状態
