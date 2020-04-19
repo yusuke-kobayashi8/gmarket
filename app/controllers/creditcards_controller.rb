@@ -2,29 +2,10 @@ class CreditcardsController < ApplicationController
 
   require "payjp"
   before_action :set_card
+  before_action :set_product, only: [:buy, :buy_conf]
+  before_action :set_card_src, only: [:index, :buy_conf]
 
   def index 
-    if @card.present?
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(@card.customer_id)
-      @card_information = customer.cards.retrieve(@card.card_id)
-
-      @card_brand = @card_information.brand      
-      case @card_brand
-      when "Visa"
-        @card_src = "visa.svg"
-      when "JCB"
-        @card_src = "jcb.svg"
-      when "MasterCard"
-        @card_src = "master-card.svg"
-      when "American Express"
-        @card_src = "american_express.svg"
-      when "Diners Club"
-        @card_src = "dinersclub.svg"
-      when "Discover"
-        @card_src = "discover.svg"
-      end
-    end
   end
 
   def new 
@@ -67,7 +48,6 @@ class CreditcardsController < ApplicationController
   end
 
   def buy
-    @product = Product.find(params[:product_id])
     if @product.purchaser_id.present?
       redirect_back
 
@@ -82,7 +62,7 @@ class CreditcardsController < ApplicationController
         customer: @card.customer_id,
         currency: 'jpy',
       )
-      if @product.update(purchaser_id: current_user.id)
+      if @product.update(purchaser_id: current_user.id, sold_date: DateTime.now)
         flash[:notice] = '購入しました。'
         redirect_to products_path
       else
@@ -92,9 +72,42 @@ class CreditcardsController < ApplicationController
     end
   end
 
+  def buy_conf
+    @image = @product.images.first
+    @address = current_user.address
+  end
+
   private
 
   def set_card
     @card = Creditcard.where(user_id: current_user.id).first if Creditcard.where(user_id: current_user.id).present?
+  end
+
+  def set_product
+    @product = Product.find(params[:product_id])
+  end
+
+  def set_card_src
+    if @card.present?
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @card_information = customer.cards.retrieve(@card.card_id)
+
+      @card_brand = @card_information.brand      
+      case @card_brand
+      when "Visa"
+        @card_src = "visa.svg"
+      when "JCB"
+        @card_src = "jcb.svg"
+      when "MasterCard"
+        @card_src = "master-card.svg"
+      when "American Express"
+        @card_src = "american_express.svg"
+      when "Diners Club"
+        @card_src = "dinersclub.svg"
+      when "Discover"
+        @card_src = "discover.svg"
+      end
+    end
   end
 end

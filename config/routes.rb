@@ -17,7 +17,12 @@ Rails.application.routes.draw do
  
   resources "category", only: [:index, :show]
 
-  resources :creditcards, only: [:index, :new, :create, :destroy] 
+  resources :creditcards, only: [:index, :new, :create, :destroy] do
+    member do
+      post :buy
+      get  :buy_conf
+    end
+  end
 
   resources :mypage , only: [:show] do
     member do

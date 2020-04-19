@@ -1,0 +1,96 @@
+.buy-conf{
+  background-color: rgb(245, 245, 245);
+  &__main{
+    height: 100%;
+    width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    &__head{
+      padding: 32px;
+      text-align: center;
+      line-height: 1.5;
+      font-size: 22px;
+    }
+    &__content{
+      padding: 32px 16px;
+      border-top: 1px solid #f5f5f5f5;
+      &__box{
+        max-width: 343px;
+        margin: 0 auto;
+        display: flex;
+        &--img{
+          height: 80px;
+          width: 80px;
+          img.buy-conf__img{
+            width: auto;
+            max-height: 80px;
+          }
+        }
+        &--detail{
+          margin-left: 16px;
+          p.buy-conf__name{
+            font-size: 14px;
+            padding: 0 0 8px;
+          }
+          p.buy-conf__price{
+            font-size: 12px;
+            font-weight: 600;
+          }
+        }
+      }
+      &__inner{
+        max-width: 343px;
+        margin: 0 auto;
+        .price-table{
+          display: flex;
+          justify-content: space-between;
+          font-weight: 600;
+          margin-bottom: 45px;
+          &__payment{
+            font-size: 18px;
+            padding-top: 7px;
+          }
+          &__price{
+            font-size: 25px;
+          }
+        }
+        .payment-info{
+          padding: 32px 0;
+          border-top: 1px solid #f5f5f5f5;
+          &__method{
+            font-size: 14px;
+          }
+        }
+        .delivery-address{
+          display: flex;
+          justify-content: space-between;
+          font-size: 14px;
+          padding: 32px 0 0;
+          border-top: 1px solid #f5f5f5f5;
+        }
+        .buy-user__address{
+          margin: 10px 0 32px;
+          font-size: 14px;
+          line-height: 1.5;
+        }
+        
+      }
+      .buy-conf__decision{
+        padding: 32px 0;
+        border-top: 1px solid #f5f5f5f5;
+        &__btn{
+          @include buy-conf-btn;
+          background-color: #3ccace;
+          border: 1px solid #3ccace;
+          cursor: pointer;
+        }
+        &__disabled{
+          @include buy-conf-btn;
+          background-color: #888;
+          border: 1px solid #888;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
