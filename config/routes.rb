@@ -19,7 +19,8 @@ Rails.application.routes.draw do
 
   resources :creditcards, only: [:index, :new, :create, :destroy] do
     member do
-      get :buy_conf
+      post :buy
+      get  :buy_conf
     end
   end
 
