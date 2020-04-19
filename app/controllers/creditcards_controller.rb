@@ -2,6 +2,7 @@ class CreditcardsController < ApplicationController
 
   require "payjp"
   before_action :set_card
+  before_action :set_payjp, only: [:create, :destroy, :buy]
   before_action :set_product, only: [:buy, :buy_conf]
   before_action :set_card_src, only: [:index, :buy_conf]
 
@@ -14,8 +15,6 @@ class CreditcardsController < ApplicationController
   end
 
   def create 
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-
     if params['payjp-token'].blank?
       flash.now[:alert] = '登録に失敗しました。'
       render "new"
@@ -37,7 +36,6 @@ class CreditcardsController < ApplicationController
   end
 
   def destroy 
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     customer = Payjp::Customer.retrieve(@card.customer_id)
     customer.delete
     if @card.destroy 
@@ -56,7 +54,6 @@ class CreditcardsController < ApplicationController
       flash[:alert] = '購入にはクレジットカード登録が必要です'
 
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       Payjp::Charge.create(
         amount:   @product.price,
         customer: @card.customer_id,
@@ -87,13 +84,17 @@ class CreditcardsController < ApplicationController
     @product = Product.find(params[:product_id])
   end
 
+  def set_payjp
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
+  end
+
   def set_card_src
     if @card.present?
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_information = customer.cards.retrieve(@card.card_id)
 
-      @card_brand = @card_information.brand      
+      @card_brand = @card_information.brand
       case @card_brand
       when "Visa"
         @card_src = "visa.svg"
