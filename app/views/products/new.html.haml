@@ -10,13 +10,18 @@
         .seller__main__content__box__text
         最大10枚までアップロードできます
 
-        #image-box-1
-          .item-num-0#seller__main__content__box__image
+        .post__drop__box__container
+          .prev-content
+          .label-content
+            %label{for: "item_images_attributes_0_image", class: "abel-box", id: "label-box--0"}
+              %pre.label-box__text-visible クリックしてファイルをアップロード
+          .hidden-content
             = f.fields_for :images do |i|
-              = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
-              .input-area
-                %label{for: "img-file"}
-                  %i.fas.fa-camera
+              = i.file_field :image, class: "hidden-field"
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+              %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
 
       %hr
       .seller__main__content__box2
@@ -43,7 +48,7 @@
           カテゴリー
           .seller__main__content__box3__category__name2 必須
         #category_form.seller__main__content__box3__form1 
-          = f.collection_select :category, @category_parents, :id, :name, include_blank: "選択してください"
+          -# = f.collection_select :category, @category_parents, :id, :name, include_blank: "選択してください"
         .seller__main__content__box3__brand
           .seller__main__content__box3__brand__name1 ブランド
           .seller__main__content__box3__brand__name2 任意
