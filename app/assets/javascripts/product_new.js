@@ -79,6 +79,9 @@ $(function(){
       //イメージを追加
       $(`#preview-box__${id} img`).attr('src', `${image}`);
       var count = $('.preview-box').length;
+        $('.update-box').each(function(index, box){
+          $(box).attr('id', `edit_btn_${index}`)
+        })
       //プレビューが5個あったらラベルを隠す 
       if (count == 5) { 
         $('.label-content').hide();
@@ -88,7 +91,6 @@ $(function(){
       if ($(`#product_images_attributes_${id}__destroy`)){
         $(`#product_images_attributes_${id}__destroy`).prop('checked',false);
       } 
-
 
       //ラベルのwidth操作
       setLabel();
@@ -154,7 +156,7 @@ $(function(){
     }
   });
 
-  //保存済み画像編集時
+  //保存済み画像と追加画像編集時
   $(document).on('click', '.update-box', function() {
     var count = $('.preview-box').length;
     setLabel(count);
