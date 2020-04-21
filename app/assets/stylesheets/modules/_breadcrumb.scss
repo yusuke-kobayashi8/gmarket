@@ -1,0 +1,15 @@
+.breadcrumbs {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16);
+  border-top: 1px solid #eee;
+  line-height: 30px;
+  font-size: 13px;
+  margin-bottom: 3px;
+  &__contener {
+    line-height: 30px;
+    font-size: 13px;
+    margin: auto;
+    width: 100%;
+    max-width: 1040px;
+    height: 30px;
+  }
+}
