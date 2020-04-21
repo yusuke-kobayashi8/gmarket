@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit]
+  before_action :set_product, only: [:show]
   before_action :set_category_parents, only: [:new, :create, :edit, :update]
 
   def index
@@ -40,9 +40,8 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    unless @product.user.id == current_user.id then
-      redirect_to root_path
-    end
+    product = Product.where(user_id: current_user.id)
+    @product = product.find(params[:id])
     @images = @product.images
   end
 
