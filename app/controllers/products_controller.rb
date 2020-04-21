@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+    @images = @product.images
   end
 
   def category_children
@@ -46,6 +47,11 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.update(product_update_params)
+    if @product.save
+      redirect_to product_path, notice: "内容を変更しました"
+    else
+      redirect_to edit_product_path, alert: "変更できません。入力必須項目を確認してください"
+    end
   end
 
   private
