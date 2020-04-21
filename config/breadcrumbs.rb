@@ -2,6 +2,11 @@ crumb :root do
   link "トップページ", root_path
 end
 
+crumb :product_show do
+  link "商品詳細", product_path(id: product.id)
+  parent :root
+end
+
 crumb :category do
   link "カテゴリー", category_index_path
   parent :root
@@ -32,6 +37,15 @@ crumb :mypage_exhibiting do
   parent :mypage
 end
 
+crumb :mypage_transaction do
+  link "取引中の商品"
+  parent :mypage
+end
+
+crumb :mypage_transactiond do
+  link "過去の取引"
+  parent :mypage
+end
 
 # crumb : do
 #   link "購入商品一覧", projects_path
