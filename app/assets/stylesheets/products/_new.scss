@@ -17,7 +17,6 @@
 
   //image投稿欄のCSS
   .post__drop__box__container{
-    display: block;
     margin: 16px auto 0;
     display: flex;
 
@@ -63,7 +62,8 @@
       //投稿クリックエリアのCSS
     .label-content{
       margin-bottom: 10px;
-      width: 620px;
+      width: 580px;
+      
       .label-box {
         display: block;
         border: 1px dashed #ccc;
