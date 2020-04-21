@@ -4,6 +4,7 @@ FactoryBot.define do
 
   # 画像が1枚の時
   factory :product do
+    
     user_id          {1}
     name             {Faker::Games::Zelda.item}
     price            {Faker::Number.within(range: 300..9999999)}

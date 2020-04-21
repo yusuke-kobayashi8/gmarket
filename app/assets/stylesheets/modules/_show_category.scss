@@ -1,7 +1,18 @@
+.result__title {
+  margin-top: 30px;
+  background-color: #3CCACE;
+  height: 70px;
+  line-height: 70px;
+  p {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+  }
+}
 .category__items {
   width: 100vw;
   height: 100vh;
-  margin-top: 30px;
   background-color:#F2F2F2;
   &__box {
     padding-top: 50px;

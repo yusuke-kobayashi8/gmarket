@@ -46,6 +46,10 @@ class ProductsController < ApplicationController
   def update
   end
 
+  def search
+    @products = Product.search(params[:keyword])
+  end
+
   private
 
     def product_params

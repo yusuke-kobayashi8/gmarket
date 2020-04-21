@@ -1,6 +1,8 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe Product, type: :model do
+  it "finds a searched product by name" do
+    @result = Product.search("pro")
   describe '#create' do
     context 'can save' do
       it 'is valid with complete form' do
@@ -109,5 +111,7 @@ RSpec.describe Product, type: :model do
         expect(product.errors[:detail]).to include("は1000文字以内で入力してください")
       end
     end
+      it "finds a searched product by name" do
+      @result = Product.search("pro")
   end
 end
