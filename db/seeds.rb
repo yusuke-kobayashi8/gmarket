@@ -298,3 +298,11 @@ others_child_array.each_with_index do |child, i|
     child.children.create(name: grandchild)
   end
 end
+
+# brandsテーブル
+
+Brand.create!(name: 'シャネル')
+Brand.create!(name: 'ナイキ')
+Brand.create!(name: 'ルイ ヴィトン')
+Brand.create!(name: 'シュプリーム')
+Brand.create!(name: 'アディダス')

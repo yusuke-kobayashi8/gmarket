@@ -1,0 +1,14 @@
+- if user_signed_in?
+  = link_to new_product_path do
+    .sell__btn
+      .sell__btn__text
+        %p 出品する
+      .sell__btn__icon
+        = image_tag 'icon_camera.png', size:'54x54'
+- else
+  = link_to new_user_registration_path do
+    .sell__btn
+      .sell__btn__text
+        %p 出品する
+      .sell__btn__icon
+        = image_tag 'icon_camera.png', size:'54x54'

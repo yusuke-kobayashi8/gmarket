@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end
-  
 
   resources :products do
     collection do
@@ -18,12 +17,17 @@ Rails.application.routes.draw do
   end
  
   resources "category", only: [:index, :show]
-  resources :creditcards, only: [:index, :new, :create, :destroy]
-  resources :mypage do
-    collection do
-      get :my_page
+
+  resources :creditcards, only: [:index, :new, :create, :destroy] do
+    member do
+      post :buy
+      get  :buy_conf
+    end
+  end
+
+  resources :mypage , only: [:show] do
+    member do
       get :my_page_logout
-      get :my_page_credit
       get :my_page_transaction
       get :my_page_transactiond
       get :my_page_exhibition
@@ -31,5 +35,4 @@ Rails.application.routes.draw do
       get :my_page_sold
     end
   end
-
 end

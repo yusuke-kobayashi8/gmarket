@@ -82,7 +82,7 @@
                 %p 商品の編集
           - else 
             .user__post__buy
-              = link_to('＃') do
+              = link_to buy_conf_creditcard_path(product_id: @product.id) do
                 %p 商品の購入に進む
         - else 
           .user__post__buy__loginyet
@@ -92,7 +92,7 @@
       .puroduct__show__main__comment__form
         .puroduct__show__main__comment__form__text
           = form_with do |f|
-            = f.text_area :text,size: "120x7"
+            = f.text_area :text, class: 'text__area__show'
             .puroduct__show__main__comment__form__warning
               相手のことを考え丁寧なコメントを心がけましょう。
               %br/
@@ -115,9 +115,5 @@
   = render 'appBanner'
 .footer
   =render 'footer'
-= link_to new_product_path do
-  .sell__btn
-    .sell__btn__text
-      %p 出品する
-    .sell__btn__icon
-      = image_tag 'icon_camera.png', size:'54x54'
+.btn-container
+  =render 'sell_button'

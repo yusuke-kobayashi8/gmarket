@@ -1,6 +1,6 @@
 document.addEventListener(
-  "DOMContentLoaded", (e) => {
-    Payjp.setPublicKey("pk_test_dc32748fc4d155671eb39ed1");
+  "DOMContentLoaded", e => {
+    Payjp.setPublicKey("pk_test_967287c450932b7b31780937");
     const btn = document.getElementById('token_submit');
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -11,7 +11,6 @@ document.addEventListener(
         exp_month: document.getElementById("exp_month").value,
         exp_year: document.getElementById("exp_year").value
       }; 
-      
       Payjp.createToken(card, (status, response) => {
         if (status === 200) {
           $("#card_number").removeAttr("name");
