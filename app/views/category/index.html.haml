@@ -1,5 +1,7 @@
 .header
   =render "products/header"
+- breadcrumb :category 
+= render "layouts/breadcrumbs"
 .category
   - @category_parent.each do |parent|
     .category__title__box
