@@ -8,6 +8,9 @@ FactoryBot.define do
     delivery_cost_id {""}
     days_to_ship_id  {""}
     prefecture_id    {""}
-  end
 
+    after(:build) do |product|
+      product.images << build(:image, product: product)
+    end
+  end
 end
