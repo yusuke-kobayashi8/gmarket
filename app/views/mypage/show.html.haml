@@ -3,7 +3,12 @@
   .main2
     .main2__right-contents
       .main2__right-contents__user-icon
-        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout-button"
+        = image_tag "mypage-user.jpg", size: "700x200"
+        .main2__right-contents__user-icon__a
+          = image_tag "member_photo_noimage_thumb.png", size: "60x60"
+          .main2__right-contents__user-icon__a--user-name
+            = current_user.nickname
+
     = render "side_ber"
 .footer
   =render 'products/footer'

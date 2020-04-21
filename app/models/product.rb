@@ -1,8 +1,8 @@
 class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :user, optional: true
+  belongs_to :user
   belongs_to :brand, optional: true
-  belongs_to :category, optional: true
+  belongs_to :category
   belongs_to :purchaser, class_name: 'User', foreign_key: :purchaser_id, optional: true
   
   belongs_to_active_hash :status
@@ -23,7 +23,6 @@ class Product < ApplicationRecord
             :prefecture_id, 
             :days_to_ship_id,
             :delivery_cost_id, presence: true
-
   def self.search(search)
     if search
       Product.where('name LIKE(?)', "%#{search}%")
