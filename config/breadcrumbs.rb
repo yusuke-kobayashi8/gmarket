@@ -3,7 +3,7 @@ crumb :root do
 end
 
 # crumb :product_show do
-#   link "商品詳細", product_path(id: product.id)
+#   link "商品詳細"
 #   parent :root
 # end
 
@@ -12,10 +12,10 @@ crumb :category do
   parent :root
 end
 
-crumb :children do |children| 
-  link category.children.name, category_path
-  parent :category
-end
+# crumb :children do |children| 
+#   link category.children.name, category_path
+#   parent :category
+# end
 
 crumb :mypage do
   link "マイページ", mypage_path(user_id: current_user.id)
