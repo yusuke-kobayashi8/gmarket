@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit]
+  
+  before_action :set_edit_product, only: [:edit, :update]
   before_action :set_category_parents, only: [:new, :create, :edit, :update]
 
   def index
@@ -10,6 +11,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+    @images = @product.images
   end
 
   def category_children
@@ -30,6 +32,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
     @images = @product.images
     @image = @images.first
   end
@@ -44,6 +47,12 @@ class ProductsController < ApplicationController
   end
 
   def update
+    @product.update(product_update_params)
+    if @product.save
+      redirect_to product_path, notice: "内容を変更しました"
+    else
+      redirect_to edit_product_path, alert: "変更できません。入力必須項目を確認してください"
+    end
   end
 
   def search
@@ -66,8 +75,15 @@ class ProductsController < ApplicationController
         images_attributes: [:image]).merge(user_id: current_user.id)
     end
 
-    def set_product
-      @product = Product.find(params[:id])
+    def product_update_params
+      params.require(:product).permit(
+        :name,
+        [images_attributes: [:image, :_destroy, :id]])
+    end
+
+    def set_edit_product
+      product = Product.where(user_id: current_user.id)
+      @product = product.find(params[:id])
     end
 
     def set_category_parents
