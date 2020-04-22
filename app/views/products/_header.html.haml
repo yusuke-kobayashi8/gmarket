@@ -5,11 +5,11 @@
         = link_to root_path do
           = image_tag 'logo.png', size:'140x45'
       .header__up__main__search__box
-        = form_with do |f| 
-          = f.text_field :keyword, placeholder: "キーワードから探す", class: "search-input" 
+        = form_tag( search_products_path, method: 'get') do
+          = text_field_tag :keyword, params[ :keyword], { placeholder: "投稿を検索する", class: "search-input" }
           = label_tag '', class: 'submit__btn' do
             = icon('fas', 'search search-small', class: 'search__icon')
-            = f.submit "検索", class: "submit-btn-send" 
+            = submit_tag "", class: "submit-btn-send" 
 
 
     .header__under__main
