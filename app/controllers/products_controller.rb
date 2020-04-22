@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product.update(product_update_params)
+    @product.update(product_params)
     if @product.save
       redirect_to product_path, notice: "内容を変更しました"
     else
@@ -72,13 +72,7 @@ class ProductsController < ApplicationController
         :prefecture_id,
         :category_id,
         :brand_id,
-        images_attributes: [:image]).merge(user_id: current_user.id)
-    end
-
-    def product_update_params
-      params.require(:product).permit(
-        :name,
-        [images_attributes: [:image, :_destroy, :id]])
+        images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
     end
 
     def set_edit_product
