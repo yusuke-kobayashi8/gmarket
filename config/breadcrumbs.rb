@@ -2,10 +2,10 @@ crumb :root do
   link "トップページ", root_path
 end
 
-crumb :product_show do
-  link "商品詳細", product_path(id: product.id)
-  parent :root
-end
+# crumb :product_show do
+#   link "商品詳細", product_path(id: product.id)
+#   parent :root
+# end
 
 crumb :category do
   link "カテゴリー", category_index_path
