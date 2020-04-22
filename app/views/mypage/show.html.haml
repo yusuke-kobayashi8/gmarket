@@ -8,7 +8,16 @@
           = image_tag "member_photo_noimage_thumb.png", size: "60x60"
           .main2__right-contents__user-icon__a--user-name
             = current_user.nickname
-
+      .main2__right-contents__purchase-container
+        .main2__right-contents__purchase-container--h2
+          購入した商品
+        .main2__right-contents__purchase-container__tabs
+          .main2__right-contents__purchase-container__tabs--a
+            取引中
+          .main2__right-contents__purchase-container__tabs--a
+            過去の取引
+          .main2__right-contents__purchase-container__info
+            過去に取引した商品がありません
     = render "side_ber"
 .footer
   =render 'products/footer'

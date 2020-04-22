@@ -1,6 +1,8 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe Product, type: :model do
+  it "finds a searched product by name" do
+    @result = Product.search("pro")
   describe '#create' do
     context 'can save' do
       it 'is valid with complete form' do
@@ -107,6 +109,35 @@ RSpec.describe Product, type: :model do
         product = build(:product, detail: Faker::Lorem.paragraph_by_chars(number: 1001, supplemental: false))
         product.valid?
         expect(product.errors[:detail]).to include("は1000文字以内で入力してください")
+      end
+    end
+      it "finds a searched product by name" do
+      @result = Product.search("pro")
+  end
+
+  describe '#edit' do
+    context 'can save' do
+      it 'is valid with complete form' do
+        expect(build(:product)).to be_valid
+      end
+
+      it 'is valid with multipul images' do
+        expect(build(:product_multipul_images)).to be_valid
+      end
+
+    end
+
+    context 'can not save' do
+      it 'is invalid without user' do
+        product = build(:product, user_id: nil)
+        product.valid?
+        expect(product.errors[:user]).to include("を入力してください")
+      end
+
+      it 'is invalid without images' do
+        product = build(:product_without_images)
+        product.valid?
+        expect(product.errors[:images]).to include("を入力してください")
       end
     end
   end
