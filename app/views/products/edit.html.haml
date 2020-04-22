@@ -1,3 +1,4 @@
+= render '/devise/registrations/signup-header'
 .seller__main 
   .seller__main__content
     = form_with model: @product, local: true do |f|
@@ -8,22 +9,36 @@
           .seller__main__content__box__name__text2 必須
         .seller__main__content__box__text
         最大10枚までアップロードできます
-        #image-box-1
-          - @images.each do |image|
-            = image_tag image.image.url
-            .item-image{"data-image" => "${file.name}"}
-              .item-image__content
-                .item-image__content--icon
-                  %img{:height => "80", :src => "image", :width => "114"}/
-              .item-image__operetion
-                .item-image__operetion--delete 削除
+        .post__drop__box__container
+          .prev-content
 
-          .item-num-0#seller__main__content__box__image
+            //JSで挿入したhtmlと同じ形　each文でのプレビュー表示
+            - @images.each do |image|
+              .preview-box
+                .upper-box
+                  = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+                .lower-box
+                  .update-box
+                    %label.edit-btn 編集
+                  .delete-box
+                    .delete-btn
+                      %span 削除
+          .label-content
+
+            //プレビューの数に合わせてforオプションを指定
+            = f.label :"images_attributes_#{@images.length}_image", class: "label-box", id: "label-box--#{@images.length}" do
+              %pre.label-box__text-visible クリックしてファイルをアップロード
+          .hidden-content
             = f.fields_for :images do |i|
-              .input-area
-                = i.file_field :image, type: 'file', name: "product[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
-                %label{for: "img-file"}
-                  %i.fas.fa-camera
+
+              //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
+              = i.file_field :image, class: "hidden-field"
+              = i.check_box:_destroy, class: "hidden-checkbox"
+
+              //5つのfile_fieldを準備するに当たって、足りない分を表示
+            - @images.length.upto(4) do |i|
+              %input{name: "product[images_attributes][#{i}][image]", id: "product_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+
       %hr
       .seller__main__content__box2
         .seller__main__content__box2__item
@@ -101,7 +116,8 @@
           -# = f.submit 'もどる', class: 'seller__main__content__box5__btn__return'
         .seller__main__content__box5__text 禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
         
-        
+.footer
+  = render 'footer'
 -# 動作確認用の仮置きのビューです
 
 -# = render partial: 'form'
