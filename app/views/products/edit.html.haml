@@ -65,7 +65,7 @@
           .seller__main__content__box3__category__name2 必須
         #category_form.seller__main__content__box3__form1 
           = f.collection_select :category_id, @product.category.parent.parent.siblings, :id, :name, selected: @product.category.parent.parent.id
-          = f.collection_select :category_id, @product.category.parent.siblings, :id, :name, {}, id: "child_category"
+          = f.collection_select :category_id, @product.category.parent.siblings, :id, :name, {selected: @product.category.parent.id}, id: "child_category"
           = f.collection_select :category_id, @product.category.siblings, :id, :name, {}, id: "grandchild_category"
         .seller__main__content__box3__brand
           .seller__main__content__box3__brand__name1 ブランド
