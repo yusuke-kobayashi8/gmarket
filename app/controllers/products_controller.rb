@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show]
+  before_action :set_product, only: [:show, :edit, :update]
   before_action :set_category_parents, only: [:new, :create, :edit, :update]
 
   def index
@@ -42,12 +42,10 @@ class ProductsController < ApplicationController
 
   def edit
     product = Product.where(user_id: current_user.id)
-    @product = product.find(params[:id])
     @images = @product.images
   end
 
   def update
-    @product = Product.find(params[:id])
     @product.update(product_update_params)
     if @product.save
       redirect_to product_path, notice: "内容を変更しました"
