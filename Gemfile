@@ -98,3 +98,5 @@ gem 'kaminari'
 
 gem 'payjp'
 gem 'dotenv-rails' 
+
+gem 'gretel'
