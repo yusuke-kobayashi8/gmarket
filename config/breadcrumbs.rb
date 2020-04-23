@@ -2,20 +2,16 @@ crumb :root do
   link "トップページ", root_path
 end
 
-# crumb :product_show do
-#   link "商品詳細"
-#   parent :root
-# end
-
 crumb :category do
-  link "カテゴリー", category_index_path
+  link "カテゴリー一覧", category_index_path
   parent :root
 end
 
-# crumb :children do |children| 
-#   link category.children.name, category_path
-#   parent :category
-# end
+crumb :grandchild do |grandchild|
+  grandchild = Category.find(params[:id])
+  link grandchild.name
+  parent :category
+end
 
 crumb :mypage do
   link "マイページ", mypage_path(user_id: current_user.id)
