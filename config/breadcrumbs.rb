@@ -8,8 +8,7 @@ crumb :category do
 end
 
 crumb :grandchild do |grandchild|
-  grandchild = Category.find(params[:id])
-  link grandchild.name
+  link Category.find(params[:id]).name
   parent :category
 end
 
