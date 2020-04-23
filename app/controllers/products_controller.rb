@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   
-  before_action :set_edit_product, only: [:edit, :update]
+  before_action :set_edit_product, only: [:edit, :update, :destroy]
   before_action :set_category_parents, only: [:new, :create, :edit, :update]
 
   def index
@@ -38,8 +38,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product = Product.find(params[:id])
-    product.destroy
+    @product.destroy
   end
 
   def edit
