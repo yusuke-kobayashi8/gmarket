@@ -98,3 +98,4 @@ gem 'kaminari'
 
 gem 'payjp'
 gem 'dotenv-rails' 
+
