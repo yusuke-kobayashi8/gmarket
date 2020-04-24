@@ -81,7 +81,9 @@ class CreditcardsController < ApplicationController
   end
 
   def set_product
-    @product = Product.find(params[:product_id])
+    product = Product.where.not(user_id: current_user.id)
+    selling_product = product.where(purchaser_id: nil)
+    @product = selling_product.find(params[:product_id])
   end
 
   def set_payjp

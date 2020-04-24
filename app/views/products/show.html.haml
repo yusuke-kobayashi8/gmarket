@@ -72,22 +72,26 @@
           = icon('fa', 'flag')
           不適切な商品の通報
       .puroduct__show__main__item__select
-        - if user_signed_in?
-          - if current_user.id == @product.user_id
-            .user__prodct__delete
-              = link_to "/products/#{@product.id}", method: :delete do
-                %p 商品の削除
-            .user__post__edit
-              = link_to edit_product_path(@product.id), method: :get do
-                %p 商品の編集
+        - if @product.purchaser_id.present?
+          .user__post__buy
+            %p 売却済みの商品です
+        -else
+          - if user_signed_in?
+            - if current_user.id == @product.user_id
+              .user__prodct__delete
+                = link_to "/products/#{@product.id}", method: :delete do
+                  %p 商品の削除
+              .user__post__edit
+                = link_to edit_product_path(@product.id), method: :get do
+                  %p 商品の編集
+            - else 
+              .user__post__buy
+                = link_to buy_conf_creditcard_path(product_id: @product.id) do
+                  %p 商品の購入に進む
           - else 
-            .user__post__buy
-              = link_to buy_conf_creditcard_path(product_id: @product.id) do
+            .user__post__buy__loginyet
+              = link_to new_user_session_path do
                 %p 商品の購入に進む
-        - else 
-          .user__post__buy__loginyet
-            = link_to new_user_session_path do
-              %p 商品の購入に進む
     .puroduct__show__main__comment
       .puroduct__show__main__comment__form
         .puroduct__show__main__comment__form__text

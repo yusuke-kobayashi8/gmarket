@@ -22,6 +22,8 @@
             = f.label :remember_me
         .actions
           = f.submit "ログインする", class: 'submit-btn'
-        -# = render "devise/shared/links"
+        .actions-new
+          = link_to "新規登録へ", new_user_registration_path
+        
   .footer
     =render '/products/footer'
