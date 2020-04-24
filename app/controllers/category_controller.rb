@@ -9,4 +9,5 @@ class CategoryController < ApplicationController
     @category = Category.find(params[:id])
     @products = Product.where(category_id: @category.id).order("created_at DESC")
   end
+
 end

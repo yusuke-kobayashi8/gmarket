@@ -82,4 +82,5 @@ class ProductsController < ApplicationController
     def set_category_parents
       @category_parents = Category.where(ancestry: nil)
     end
+
 end
